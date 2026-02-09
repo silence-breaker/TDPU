@@ -1,0 +1,2 @@
+# 仅忽略 models 目录下的 safetensors 文件
+**/*.safetensors
