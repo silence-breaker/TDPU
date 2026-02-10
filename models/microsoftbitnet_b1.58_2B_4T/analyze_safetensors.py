@@ -126,45 +126,44 @@ def main():
     with open(CONFIG_PATH) as f:
         config = json.load(f)
 
-    print("=" * 80)
-    print("BitNet b1.58 2B-4T 模型结构分析")
-    print("=" * 80)
+    p = print  # shorthand
 
-    print(f"\n📋 模型配置 (config.json):")
-    print(f"  架构:           {config['architectures'][0]}")
-    print(f"  隐藏层维度:     {config['hidden_size']}")
-    print(f"  中间层维度:     {config['intermediate_size']}")
-    print(f"  层数:           {config['num_hidden_layers']}")
-    print(f"  注意力头数:     {config['num_attention_heads']}")
-    print(f"  KV 头数:        {config['num_key_value_heads']}")
-    print(f"  词表大小:       {config['vocab_size']}")
-    print(f"  最大位置编码:   {config['max_position_embeddings']}")
-    print(f"  激活函数:       {config['hidden_act']}")
-    print(f"  量化方式:       {config['quantization_config']['quant_method']}")
-    print(f"  数据类型:       {config['torch_dtype']}")
-    print(f"  tie_word_embed: {config['tie_word_embeddings']}")
+    p("# BitNet b1.58 2B-4T 模型结构分析\n")
+
+    p("## 模型配置 (config.json)\n")
+    p("| 属性 | 值 |")
+    p("| :--- | :--- |")
+    p(f"| 架构 | `{config['architectures'][0]}` |")
+    p(f"| 隐藏层维度 | {config['hidden_size']} |")
+    p(f"| 中间层维度 | {config['intermediate_size']} |")
+    p(f"| 层数 | {config['num_hidden_layers']} |")
+    p(f"| 注意力头数 | {config['num_attention_heads']} |")
+    p(f"| KV 头数 | {config['num_key_value_heads']} |")
+    p(f"| 词表大小 | {config['vocab_size']} |")
+    p(f"| 最大位置编码 | {config['max_position_embeddings']} |")
+    p(f"| 激活函数 | `{config['hidden_act']}` |")
+    p(f"| 量化方式 | `{config['quantization_config']['quant_method']}` |")
+    p(f"| 数据类型 | `{config['torch_dtype']}` |")
+    p(f"| tie_word_embeddings | `{config['tie_word_embeddings']}` |")
 
     # 解析 safetensors
-    print(f"\n📦 文件: {SAFETENSORS_PATH.name}")
-    print(f"  大小: {format_size(SAFETENSORS_PATH.stat().st_size)}")
+    p(f"\n> 文件: `{SAFETENSORS_PATH.name}`, 大小: **{format_size(SAFETENSORS_PATH.stat().st_size)}**\n")
 
     metadata = parse_safetensors_header(SAFETENSORS_PATH)
     tensors = analyze_tensors(metadata)
 
-    # ── 1. 所有张量列表 ──
-    print(f"\n{'=' * 80}")
-    print(f"1. 张量列表 (共 {len(tensors)} 个)")
-    print(f"{'=' * 80}")
-    print(f"{'名称':<65} {'形状':<25} {'类型':<8} {'大小':>10}")
-    print("-" * 110)
+    # ── 1. 张量列表 ──
+    p(f"## 1. 张量列表 (共 {len(tensors)} 个)\n")
+    p("<details>")
+    p("<summary>点击展开完整张量列表</summary>\n")
+    p("| 名称 | 形状 | 类型 | 大小 |")
+    p("| :--- | :--- | :--- | ---: |")
     for t in tensors:
-        shape_str = str(t["shape"])
-        print(f"{t['name']:<65} {shape_str:<25} {t['dtype']:<8} {format_size(t['size_bytes']):>10}")
+        p(f"| `{t['name']}` | `{t['shape']}` | {t['dtype']} | {format_size(t['size_bytes'])} |")
+    p("\n</details>\n")
 
     # ── 2. 按类别统计 ──
-    print(f"\n{'=' * 80}")
-    print("2. 按类别统计")
-    print(f"{'=' * 80}")
+    p("## 2. 按类别统计\n")
     category_stats = defaultdict(lambda: {"count": 0, "elements": 0, "bytes": 0})
     for t in tensors:
         cat = classify_tensor(t["name"])
@@ -175,29 +174,25 @@ def main():
     total_bytes = sum(s["bytes"] for s in category_stats.values())
     total_elements = sum(s["elements"] for s in category_stats.values())
 
-    print(f"{'类别':<20} {'张量数':>6} {'参数量':>15} {'存储大小':>12} {'占比':>8}")
-    print("-" * 65)
+    p("| 类别 | 张量数 | 参数量 | 存储大小 | 占比 |")
+    p("| :--- | ---: | ---: | ---: | ---: |")
     for cat in sorted(category_stats, key=lambda c: category_stats[c]["bytes"], reverse=True):
         s = category_stats[cat]
         pct = s["bytes"] / total_bytes * 100
-        print(f"{cat:<20} {s['count']:>6} {s['elements']:>15,} {format_size(s['bytes']):>12} {pct:>7.2f}%")
-    print("-" * 65)
-    print(f"{'合计':<20} {len(tensors):>6} {total_elements:>15,} {format_size(total_bytes):>12} {'100.00%':>8}")
+        p(f"| {cat} | {s['count']} | {s['elements']:,} | {format_size(s['bytes'])} | {pct:.2f}% |")
+    p(f"| **合计** | **{len(tensors)}** | **{total_elements:,}** | **{format_size(total_bytes)}** | **100.00%** |")
 
-    # ── 3. 按层分组 (Layer 0 详细展示) ──
-    print(f"\n{'=' * 80}")
-    print("3. Layer 0 详细结构 (其余层结构相同)")
-    print(f"{'=' * 80}")
+    # ── 3. Layer 0 详细结构 ──
+    p(f"\n## 3. Layer 0 详细结构 (其余层结构相同)\n")
+    p("| 名称 | 形状 | 类型 | 大小 |")
+    p("| :--- | :--- | :--- | ---: |")
     for t in tensors:
         if extract_layer_idx(t["name"]) == 0:
             short_name = t["name"].split("model.layers.0.")[-1]
-            shape_str = str(t["shape"])
-            print(f"  {short_name:<50} {shape_str:<25} {t['dtype']:<8} {format_size(t['size_bytes']):>10}")
+            p(f"| `{short_name}` | `{t['shape']}` | {t['dtype']} | {format_size(t['size_bytes'])} |")
 
     # ── 4. FPGA 加速相关分析 ──
-    print(f"\n{'=' * 80}")
-    print("4. FPGA 加速相关分析 (BitLinear 层)")
-    print(f"{'=' * 80}")
+    p(f"\n## 4. FPGA 加速相关分析 (BitLinear 层)\n")
 
     hidden = config["hidden_size"]
     inter = config["intermediate_size"]
@@ -216,45 +211,42 @@ def main():
         ("down_proj", inter, hidden),
     ]
 
-    print(f"\n  每层 Transformer Block 的 Linear 层:")
-    print(f"  {'名称':<15} {'输入维度 (K)':>12} {'输出维度 (M)':>12} {'参数量':>12} {'1.58-bit 压缩':>14}")
-    print("  " + "-" * 68)
+    p("每层 Transformer Block 的 Linear 层:\n")
+    p("| 名称 | 输入维度 (K) | 输出维度 (M) | 参数量 | 1.58-bit 压缩 |")
+    p("| :--- | ---: | ---: | ---: | ---: |")
     layer_total_params = 0
     layer_total_compressed = 0
     for name, k, m in linear_layers:
         params = k * m
-        # 1.58-bit: 每个权重 2 bit, 压缩后大小
         compressed = params * 2 // 8
         layer_total_params += params
         layer_total_compressed += compressed
-        print(f"  {name:<15} {k:>12,} {m:>12,} {params:>12,} {format_size(compressed):>14}")
-    print("  " + "-" * 68)
-    print(f"  {'单层合计':<15} {'':>12} {'':>12} {layer_total_params:>12,} {format_size(layer_total_compressed):>14}")
-    print(f"  {'全部 ' + str(n_layers) + ' 层':<15} {'':>12} {'':>12} {layer_total_params * n_layers:>12,} {format_size(layer_total_compressed * n_layers):>14}")
+        p(f"| {name} | {k:,} | {m:,} | {params:,} | {format_size(compressed)} |")
+    p(f"| **单层合计** | | | **{layer_total_params:,}** | **{format_size(layer_total_compressed)}** |")
+    p(f"| **全部 {n_layers} 层** | | | **{layer_total_params * n_layers:,}** | **{format_size(layer_total_compressed * n_layers)}** |")
 
     # ── 5. 数据类型分布 ──
-    print(f"\n{'=' * 80}")
-    print("5. 数据类型分布")
-    print(f"{'=' * 80}")
+    p(f"\n## 5. 数据类型分布\n")
     dtype_stats = defaultdict(lambda: {"count": 0, "bytes": 0})
     for t in tensors:
         dtype_stats[t["dtype"]]["count"] += 1
         dtype_stats[t["dtype"]]["bytes"] += t["size_bytes"]
+
+    p("| 数据类型 | 字节/元素 | 张量数 | 存储大小 |")
+    p("| :--- | ---: | ---: | ---: |")
     for dtype, s in sorted(dtype_stats.items(), key=lambda x: x[1]["bytes"], reverse=True):
         friendly, bpe = DTYPE_INFO.get(dtype, (dtype, 0))
-        print(f"  {friendly:<10} ({bpe}B/elem): {s['count']:>4} 张量, {format_size(s['bytes']):>12}")
+        p(f"| {friendly} | {bpe}B | {s['count']} | {format_size(s['bytes'])} |")
 
     # ── 6. 权重值采样分析 ──
-    print(f"\n{'=' * 80}")
-    print("6. 权重值采样分析 (验证三值特性)")
-    print(f"{'=' * 80}")
+    p(f"\n## 6. 权重值采样分析 (验证三值特性)\n")
     try:
         analyze_weight_values(tensors)
     except Exception as e:
-        print(f"  跳过 (需要安装 safetensors 库): {e}")
-        print(f"  安装: pip install safetensors")
+        p(f"跳过 (需要安装 safetensors 库): {e}")
+        p(f"```\npip install safetensors\n```")
 
-    print()
+    p()
 
 
 def unpack_ternary_u8(packed: "numpy.ndarray") -> "numpy.ndarray":
@@ -298,8 +290,8 @@ def analyze_weight_values(tensors: list[dict]):
     if not sample_tensors:
         sample_tensors = [t for t in tensors if t["dtype"] == "U8" and "scale" not in t["name"]][:3]
 
-    print(f"\n  说明: 权重以 U8 打包存储, 每个 uint8 = 4 个 2-bit 三值权重")
-    print(f"  编码: 2'b00=-1, 2'b01=0, 2'b10=+1, 2'b11=0(padding)")
+    print(f"\n> 权重以 U8 打包存储, 每个 uint8 = 4 个 2-bit 三值权重")
+    print(f"> 编码: `2'b00=-1, 2'b01=0, 2'b10=+1, 2'b11=0(padding)`\n")
 
     with safe_open(str(SAFETENSORS_PATH), framework="numpy") as f:
         for t in sample_tensors:
@@ -316,14 +308,17 @@ def analyze_weight_values(tensors: list[dict]):
             # 实际逻辑维度 (打包前)
             real_shape = (t["shape"][0] * 4, t["shape"][1]) if len(t["shape"]) == 2 else t["shape"]
 
-            print(f"\n  {name}:")
-            print(f"    打包形状: {t['shape']} (U8) -> 解包形状: {real_shape} (ternary)")
-            print(f"    解包后唯一值: {sorted(unique_vals)}")
             is_ternary = unique_vals.issubset({-1, 0, 1})
+            status = "三值" if is_ternary else "非三值"
+            dist = f"+1={n_pos/total*100:.1f}%, 0={n_zero/total*100:.1f}%, -1={n_neg/total*100:.1f}%"
+
+            print(f"**`{name}`**")
+            print(f"- 打包形状: `{t['shape']}` (U8) -> 解包形状: `{real_shape}` (ternary)")
+            print(f"- 解包后唯一值: `{sorted(unique_vals)}`")
             if is_ternary:
-                print(f"    ✅ 三值权重: +1={n_pos/total*100:.1f}%, 0={n_zero/total*100:.1f}%, -1={n_neg/total*100:.1f}%")
+                print(f"- {status}: {dist}\n")
             else:
-                print(f"    ❌ 非三值权重 (共 {len(unique_vals)} 个唯一值)")
+                print(f"- 非三值权重 (共 {len(unique_vals)} 个唯一值)\n")
 
 
 if __name__ == "__main__":
@@ -339,7 +334,7 @@ if __name__ == "__main__":
     # 打印到终端
     print(output, end="")
     # 保存到同目录下的 analysis_report.txt
-    report_path = MODEL_DIR / "analysis_report.txt"
+    report_path = MODEL_DIR / "analysis_report.md"
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(output)
     print(f"分析报告已保存至: {report_path}")
