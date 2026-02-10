@@ -33,8 +33,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vvec_multi_core VL_NOT_FINAL : public Verilat
     VL_IN8(&rst_n,0,0);
     VL_IN8(&i_data_valid,0,0);
     VL_IN8(&i_load_weight,0,0);
-    VL_INW(&i_data,127,0,4);
-    VL_IN(&i_weight,31,0);
+    VL_INW(&i_data,255,0,8);
+    VL_IN64(&i_weight,63,0);
     VL_OUT8(&o_data_ready,0,0);
     VL_OUT(&o_result,31,0);
 

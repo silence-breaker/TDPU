@@ -33,26 +33,25 @@ int main(int argc, char** argv) {
         tfp->dump(main_time++); // 记录低电平
     };
 
-    // [关键] 安全设置 128-bit 输入数据 (避免内存越界)
-    // 将 val 赋给所有 16 个输入通道
+    // [关键] 安全设置 256-bit 输入数据 (LEN=32, 32×8-bit = 256-bit)
+    // 将 val 赋给所有 32 个输入通道
     auto set_all_inputs = [&](int8_t val) {
-        // Verilator 将 logic [15:0][7:0] i_data 映射为 4个 uint32_t
-        for (int k = 0; k < 4; k++) {
+        // Verilator 将 logic [31:0][7:0] i_data 映射为 8个 uint32_t
+        for (int k = 0; k < 8; k++) {
             uint32_t chunk = 0;
             for (int j = 0; j < 4; j++) {
-                // 将 8-bit 数据拼接到 32-bit 块中
                 chunk |= ((uint32_t)(uint8_t)val) << (j * 8);
             }
             top->i_data[k] = chunk;
         }
     };
 
-    // [关键] 安全设置 1.58-bit 权重
+    // [关键] 安全设置 1.58-bit 权重 (LEN=32, 32×2-bit = 64-bit)
     // val_type: VAL_W_POS, VAL_W_NEG, or VAL_W_ZERO
     auto set_all_weights = [&](int val_type) {
-        uint32_t w_data = 0;
-        for(int i=0; i<16; i++) {
-            w_data |= (val_type << (i * 2));
+        uint64_t w_data = 0;
+        for(int i=0; i<32; i++) {
+            w_data |= ((uint64_t)val_type << (i * 2));
         }
         top->i_weight = w_data;
     };
@@ -83,13 +82,13 @@ int main(int argc, char** argv) {
     tick(); // 打一拍加载权重
     top->i_load_weight = 0;
 
-    std::cout << "[CASE 1] Input: 10. Expected Output: 160" << std::endl;
+    std::cout << "[CASE 1] Input: 10. Expected Output: 320 (10*32)" << std::endl;
     top->i_data_valid = 1;
     set_all_inputs(10); 
     tick(); // 数据进入流水线 Stage 0
 
     // 验证"锁存特性": 立即拉低 valid，不再输入新数据
-    // 期望：Ready 信号只亮 1 拍，但 Result 信号更新为 160 后一直保持
+    // 期望：Ready 信号只亮 1 拍，但 Result 信号更新为 320 后一直保持
     top->i_data_valid = 0; 
     
     // 观察 10 拍
@@ -109,7 +108,7 @@ int main(int argc, char** argv) {
     tick();
     top->i_load_weight = 0;
 
-    std::cout << "[CASE 2] Input: 5. Expected Output: -80" << std::endl;
+    std::cout << "[CASE 2] Input: 5. Expected Output: -160 (-5*32)" << std::endl;
     top->i_data_valid = 1;
     set_all_inputs(5);
     tick();
@@ -129,7 +128,7 @@ int main(int argc, char** argv) {
     top->i_data_valid = 1;
     
     // 连续输入 3 个不同的数: 1, 2, 3
-    // 对应输出应为: -16, -32, -48
+    // 对应输出应为: -32, -64, -96 (LEN=32, 全-1权重)
     int inputs[] = {1, 2, 3};
     
     for(int k=0; k<3; k++) {
@@ -145,6 +144,37 @@ int main(int argc, char** argv) {
         if (top->o_data_ready) {
             std::cout << "  [Burst Output] Result=" << (int)top->o_result << std::endl;
         }
+    }
+
+    // ==========================================
+    // Case 4: 混合权重测试 (部分+1, 部分-1, 部分0)
+    // ==========================================
+    std::cout << "\n[CASE 4] Mixed Weights: 16x(+1), 8x(-1), 8x(0)" << std::endl;
+    // 构造混合权重: index 0-15 = +1, 16-23 = -1, 24-31 = 0
+    // 编码: W_POS=2'b10, W_NEG=2'b00, W_ZERO=2'b01
+    {
+        uint64_t w_data = 0;
+        for(int i=0; i<16; i++)  w_data |= ((uint64_t)VAL_W_POS  << (i * 2));  // +1
+        for(int i=16; i<24; i++) w_data |= ((uint64_t)VAL_W_NEG  << (i * 2));  // -1
+        for(int i=24; i<32; i++) w_data |= ((uint64_t)VAL_W_ZERO << (i * 2));  // 0
+        top->i_load_weight = 1;
+        top->i_weight = w_data;
+        tick();
+        top->i_load_weight = 0;
+    }
+
+    // Input: 全部为 10
+    // Expected: 16*(+10) + 8*(-10) + 8*(0) = 160 - 80 + 0 = 80
+    std::cout << "[CASE 4] Input: 10. Expected Output: 80 (16*10 - 8*10 + 0)" << std::endl;
+    top->i_data_valid = 1;
+    set_all_inputs(10);
+    tick();
+    top->i_data_valid = 0;
+
+    for(int i=0; i<10; i++) {
+        tick();
+        std::cout << "  Cycle " << i << ": Result=" << (int)top->o_result
+                  << " | Ready=" << (int)top->o_data_ready << std::endl;
     }
 
     // --- 4. 结束仿真 ---
