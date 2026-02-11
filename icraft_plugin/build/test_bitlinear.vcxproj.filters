@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="\\wsl.localhost\Ubuntu-22.04\home\silence_breaker\git\TDPU\icraft_plugin\test\test_bitlinear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="\\wsl.localhost\Ubuntu-22.04\home\silence_breaker\git\TDPU\icraft_plugin\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{78CC6FE7-CAEF-3FCA-9859-86A4827F239C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

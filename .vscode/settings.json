@@ -1,4 +1,5 @@
 {
     "workbench.editor.enablePreviewFromCodeNavigation": true,
-    "workbench.editor.enablePreviewFromQuickOpen": true
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "cmake.sourceDirectory": "/home/silence_breaker/git/TDPU/icraft_plugin"
 }

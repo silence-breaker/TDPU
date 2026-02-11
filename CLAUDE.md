@@ -62,4 +62,4 @@
 
 ## 工作区启动说明
 
-* 每次在工作区中跑代码都要记得激活conda环境，命令为：`conda activate RV_AI_FPGA`
+* 每次在工作区中跑代码都要记得激活conda环境，命令为：`conda activate icraft_enva`

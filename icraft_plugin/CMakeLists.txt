@@ -1,11 +1,33 @@
-cmake_minimum_required(VERSION 3.14)
-project(icraft_bitlinear_plugin LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.24)
+project(icraft_bitlinear_plugin LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Icraft SDK (Windows 环境, 已在 PATH 中)
-find_package(Icraft REQUIRED COMPONENTS xir xrt hostbackend)
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
+# MSVC 编译参数 (与 Icraft 官方示例一致)
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zi>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/permissive->")
+add_link_options("$<$<CXX_COMPILER_ID:MSVC>:/INCREMENTAL:NO>")
+add_link_options("$<$<CXX_COMPILER_ID:MSVC>:/DEBUG>")
+add_link_options("$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:Release>>:/OPT:REF>")
+add_link_options("$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:Release>>:/OPT:ICF>")
+
+# ============================================================
+# Icraft SDK 路径 (Windows 安装目录)
+# 可通过 -DICRAFT_SDK_DIR=... 覆盖
+# ============================================================
+if(NOT DEFINED ICRAFT_SDK_DIR)
+    set(ICRAFT_SDK_DIR "C:/Icraft/CLI v3.33.1")
+endif()
+list(APPEND CMAKE_PREFIX_PATH "${ICRAFT_SDK_DIR}/cmake")
+
+# 查找 Icraft 依赖库 (按组件查找, HostBackend 会自动拉取 XRT → XIR → Utils)
+find_package(Icraft-HostBackend REQUIRED)
 
 # ============================================================
 # 共享库: BitLinear 算子插件
@@ -17,8 +39,6 @@ add_library(icraft.tdpu.bitlinear SHARED
 )
 target_include_directories(icraft.tdpu.bitlinear PRIVATE include)
 target_link_libraries(icraft.tdpu.bitlinear PRIVATE
-    Icraft::XIR
-    Icraft::XRT
     Icraft::HostBackend
 )
 
@@ -29,7 +49,5 @@ add_executable(test_bitlinear test/test_bitlinear.cpp)
 target_include_directories(test_bitlinear PRIVATE include)
 target_link_libraries(test_bitlinear PRIVATE
     icraft.tdpu.bitlinear
-    Icraft::XIR
-    Icraft::XRT
     Icraft::HostBackend
 )
