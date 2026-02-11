@@ -1,0 +1,10 @@
+^D:\SYSU\JC\CODE-SPACE\TDPU\ICRAFT_PLUGIN\CMAKELISTS.TXT
+setlocal
+F:\Cmake\install\bin\cmake.exe -SD:/SYSU/JC/Code-space/TDPU/icraft_plugin -BD:/SYSU/JC/Code-space/TDPU/icraft_plugin/build --check-stamp-file D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

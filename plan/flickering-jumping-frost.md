@@ -8,7 +8,8 @@
 - [x] Phase 1 完成: RTL 升级到 LEN=32, Verilator 仿真 4 Case 全部通过 (延迟 6 拍)
 - [x] RTL 优化: 动态位宽(9→14bit)、数据通路去复位、加法树直连PE输出、generate if-else 消除越界
 - [x] Phase 2 代码完成: icraft_plugin/ 全部文件已创建
-- [ ] Phase 2 验证: 需在 Windows PowerShell 编译并运行 test_bitlinear
+- [x] Phase 2 编译通过: icraft.tdpu.bitlinear.dll + test_bitlinear.exe 均编译成功
+- [x] Phase 2 验证通过: test_bitlinear.exe 2/2 PASS (All+1=640, Mixed=0)
 - [ ] Phase 3: ONNX 模型接入
 
 **本次目标**: 升级 RTL 到 LEN=32，并完成 Icraft 自定义算子注册 + HostBackend CPU 仿真，使 `icraft run` 能在 PC 上跑通 BitLinear 计算图。
@@ -94,8 +95,8 @@ using namespace icraft::xir;
 
 namespace tdpu {
 
-// 算子节点 - 存储属性
-class BitLinearNode : public OpNodeBase<BitLinearNode, OneResult> {
+// 算子节点 - 存储属性 (注意: 无 OneResult 模板参数)
+class BitLinearNode : public OpNodeBase<BitLinearNode> {
 public:
     int64_t in_features;    // 输入特征维度 (K)
     int64_t out_features;   // 输出特征维度 (M)
@@ -110,8 +111,6 @@ public:
 class BitLinear : public OpBase<BitLinear, BitLinearNode> {
 public:
     BitLinear() = default;
-
-    // 构造: input=[batch, in_features] INT8, weight=[out_features, in_features] ternary
     BitLinear(Value input, Value weight, int64_t in_features, int64_t out_features) {
         auto node = make_object<BitLinearNode>();
         node->in_features = in_features;
@@ -127,14 +126,24 @@ public:
 注册 + 类型推断:
 ```cpp
 // bitlinear_op.cpp
-ICRAFT_REGISTER_OP_NODE(tdpu::BitLinearNode)
-.set_tinfer<tdpu::BitLinearNode, HostTarget>([](const auto* op) {
+#include <icraft-xir/core/reflection.h>
+#include <icraft-xir/core/data_type.h>
+#include <icraft-xir/core/layout.h>
+
+// 注册和类型推断必须分开写
+ICRAFT_REGISTER_OP_NODE(BitLinearNode);
+
+ICRAFT_REGISTER_TINFER(BitLinearNode, HostTarget, [](const BitLinearNode* op) {
     op->validate();
     auto input_type = op->inputs[0].tensorType();
-    auto batch = input_type.shape()[0];
+    auto batch = input_type.getDim(0);       // 用 getDim() 而非 shape()
     auto out_features = op->out_features;
-    // 输出: [batch, out_features] INT32
-    auto output_type = TensorType(IntegerType::SInt32(), {batch, out_features});
+    // TensorType 需要 3 参数: (ScalarType, Array<int64_t>, Layout)
+    auto output_type = TensorType(
+        IntegerType::SInt32(),
+        Array<int64_t>{batch, out_features},
+        Layout("RC")
+    );
     return Array<TensorType>{output_type};
 });
 ```
@@ -146,57 +155,49 @@ ICRAFT_REGISTER_OP_NODE(tdpu::BitLinearNode)
 核心逻辑 — 用 C++ 模拟 FPGA 的 ternary matmul:
 
 ```cpp
+// forward 签名: 4 个参数 (含 outputs)
+// 注意: inputs 只含运行时张量 (激活值), 权重通过 op.paramsInputs() 获取
 auto bitlinear_forward = [](const tdpu::BitLinear& op,
                             const std::vector<Tensor>& inputs,
-                            HostBackend backend) {
+                            const std::vector<Tensor>& /*outputs*/,
+                            HostBackend backend) -> std::vector<Tensor>
+{
     auto activation = inputs[0];  // [batch, K] INT8
-    auto weight = inputs[1];      // [M, K] packed ternary (uint8, 4 weights per byte)
+    // 权重不在 inputs 中! 从 Operation 的 Params 获取
+    auto params_list = op.paramsInputs();
+    auto* w_ptr = params_list[0].data<uint8_t>().get();
 
-    int64_t batch = activation.shape()[0];
     int64_t K = op->in_features;
     int64_t M = op->out_features;
+    int64_t batch = op->inputs[0].tensorType().getDim(0);
 
-    // 分配输出 [batch, M] INT32
-    auto output_type = TensorType(IntegerType::SInt32(), {batch, M});
-    auto output = Tensor::Create(output_type, backend);
+    auto output_type = TensorType(IntegerType::SInt32(),
+        Array<int64_t>{batch, M}, Layout("RC"));
+    auto output = Tensor(output_type).mallocOn(HostDevice::MemRegion());
 
-    auto* act_ptr = activation.data<int8_t>();
-    auto* w_packed = weight.data<uint8_t>();
-    auto* out_ptr = output.data<int32_t>();
+    auto* act_ptr = reinterpret_cast<const int8_t*>(activation.data().cptr());
+    auto* out_ptr = reinterpret_cast<int32_t*>(output.data().cptr());
 
-    // 解包权重: uint8 → 4 个 ternary 值 {-1, 0, +1}
-    // 编码: 2'b00=-1, 2'b01=0, 2'b10=+1
-    auto unpack_weight = [](uint8_t packed, int idx) -> int {
-        int val = (packed >> (idx * 2)) & 0x3;
-        if (val == 0) return -1;      // 2'b00
-        if (val == 2) return  1;      // 2'b10
-        return 0;                      // 2'b01 or 2'b11
-    };
-
-    // Ternary MatMul: output[b][m] = sum_k(act[b][k] * w_ternary[m][k])
+    // Ternary MatMul (与 RTL 行为一致)
     for (int64_t b = 0; b < batch; b++) {
         for (int64_t m = 0; m < M; m++) {
             int32_t acc = 0;
             for (int64_t k = 0; k < K; k++) {
                 int8_t a = act_ptr[b * K + k];
-                // 每个 uint8 包含 4 个权重
                 int byte_idx = (m * K + k) / 4;
                 int bit_idx = (m * K + k) % 4;
-                int w = unpack_weight(w_packed[byte_idx], bit_idx);
-                // Ternary multiply: 无需 DSP
+                int w = unpack_ternary(w_ptr[byte_idx], bit_idx);
                 if (w == 1)       acc += a;
                 else if (w == -1) acc -= a;
-                // w == 0: skip
             }
             out_ptr[b * M + m] = acc;
         }
     }
-
-    return std::vector<Tensor>{output};
+    return {output};
 };
 
-ICRAFT_ADD_OP_TO_BACKEND(tdpu::BitLinear, HostBackend)
-    .set_init([](const tdpu::BitLinear& op, HostBackend backend) {})
+ICRAFT_ADD_OP_TO_BACKEND(BitLinear, HostBackend)
+    .set_init(bitlinear_init)
     .set_forward(bitlinear_forward);
 ```
 
@@ -207,37 +208,40 @@ ICRAFT_ADD_OP_TO_BACKEND(tdpu::BitLinear, HostBackend)
 不依赖 ONNX 解析，直接用 XIR API 构建一个小型测试网络:
 
 ```cpp
-// 创建网络
-auto network = Network::Create("bitlinear_test");
+// 创建网络 (需要 3 参数: name, Framework, version)
+auto network = Network(name, Framework::ONNX, "1.0");
 
-// Input: [1, 64] INT8 激活值
-auto input_type = TensorType(IntegerType::SInt8(), {1, 64});
-auto input_op = Input(input_type);
+// Input: [1, 64] INT8 (TensorType 需要 Layout 参数)
+auto input_type = TensorType(IntegerType::SInt8(),
+    Array<int64_t>{1, 64}, Layout("RC"));
+auto input_op = Input(Array<TensorType>{input_type});
 network.addOp(input_op);
 
-// Weight: [32, 64] packed ternary (常量)
-// 32*64/4 = 512 bytes packed
-auto weight_data = generate_test_weights(32, 64);  // 生成测试权重
-auto weight_op = Constant(weight_type, weight_data);
-network.addOp(weight_op);
+// Weight: [32, 16] packed ternary (用 Params 而非 Constant)
+auto weight_type = TensorType(IntegerType::UInt8(),
+    Array<int64_t>{32, 16}, Layout("RC"));
+auto weight_data = std::shared_ptr<uint8_t[]>(new uint8_t[512]);
+// ... 填充权重数据 ...
+auto weight_param = Params(weight_data, "weight", weight_type);
 
 // BitLinear: [1, 64] x [32, 64]^T → [1, 32]
-auto bitlinear = tdpu::BitLinear(input_op[0], weight_op[0], 64, 32);
+auto bitlinear = tdpu::BitLinear(input_op[0], weight_param, 64, 32);
 network.addOp(bitlinear);
 
-// Output
-auto output_op = Output(bitlinear[0]);
+// Output (接受 Array<Value>)
+auto output_op = Output(Array<Value>{bitlinear[0]});
 network.addOp(output_op);
-
-// 序列化
-network.dumpJsonToFile("bitlinear_test.json");
-network.dumpParamsToFile("bitlinear_test.raw");
 
 // 运行
 auto session = Session::Create<HostBackend>(network, {HostDevice::Default()});
 session.apply();
-auto result = session.forward({test_input_tensor});
-// 验证结果与 Python numpy 计算一致
+
+// 准备输入 Tensor (用 write 写入数据, read 读取结果)
+auto input_tensor = Tensor(input_type).mallocOn(HostDevice::MemRegion());
+input_tensor.write(0, reinterpret_cast<char*>(data_ptr), byte_size);
+
+auto result = session.forward({input_tensor});
+result[0].read(reinterpret_cast<char*>(out_ptr), 0, byte_size);
 ```
 
 ### Step 2.5 CMake 构建配置
@@ -245,26 +249,35 @@ auto result = session.forward({test_input_tensor});
 **文件**: `icraft_plugin/CMakeLists.txt`
 
 ```cmake
-cmake_minimum_required(VERSION 3.14)
-project(icraft_bitlinear_plugin)
+cmake_minimum_required(VERSION 3.24)
+project(icraft_bitlinear_plugin LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 17)
 
-# Icraft SDK (Windows 环境下)
-find_package(Icraft REQUIRED COMPONENTS xir xrt hostbackend)
+# MSVC 必须加 /Zc:__cplusplus, 否则 SDK 内部 wise_enum 会编译失败
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zc:__cplusplus>")
+
+# Icraft SDK
+set(ICRAFT_SDK_DIR "C:/Icraft/CLI v3.33.1")
+list(APPEND CMAKE_PREFIX_PATH "${ICRAFT_SDK_DIR}/cmake")
+find_package(Icraft-HostBackend REQUIRED)
 
 add_library(icraft.tdpu.bitlinear SHARED
     src/bitlinear_op.cpp
     src/bitlinear_host_forward.cpp
+    src/bitlinear_pass.cpp
 )
 target_include_directories(icraft.tdpu.bitlinear PRIVATE include)
-target_link_libraries(icraft.tdpu.bitlinear PRIVATE
-    Icraft::XIR Icraft::XRT Icraft::HostBackend
-)
+target_link_libraries(icraft.tdpu.bitlinear PRIVATE Icraft::HostBackend)
 
-# 测试
-add_executable(test_bitlinear test/test_bitlinear.cpp)
-target_link_libraries(test_bitlinear PRIVATE
-    icraft.tdpu.bitlinear Icraft::XIR Icraft::XRT Icraft::HostBackend
+# 测试: 直接编译源文件 (DLL 无导出符号, 不生成 .lib)
+add_executable(test_bitlinear
+    test/test_bitlinear.cpp
+    src/bitlinear_op.cpp
+    src/bitlinear_host_forward.cpp
 )
+target_include_directories(test_bitlinear PRIVATE include)
+target_link_libraries(test_bitlinear PRIVATE Icraft::HostBackend)
 ```
 
 **编译环境**: 在 Windows PowerShell 中执行（Icraft x86_64 已在 PATH）:
@@ -305,16 +318,16 @@ icraft run --json bitlinear_test.json --raw bitlinear_test.raw --backend host
 ```cpp
 static Pass ReplaceMatMulWithBitLinear() {
     auto pass_func = [](Network network, const PassContext& ctx) {
-        auto matmul_p = IsOp<MatMul>();
+        auto matmul_p = IsOp<Matmul>();  // 注意: 类名是 Matmul 不是 MatMul
         network.rewrite(matmul_p, [&](Network& net, const MatchGroup& result) {
-            auto matmul = result.at(matmul_p);
-            // 检查权重是否为 ternary packed 格式
+            Operation matmul = result.at(matmul_p);  // 返回 Operation 类型
             auto weight = matmul->inputs[1];
-            if (!is_ternary_weight(weight)) return;  // 跳过非 ternary 的 MatMul
+            if (!is_ternary_weight(weight)) return;
 
             auto input = matmul->inputs[0];
-            auto K = get_in_features(weight);
-            auto M = get_out_features(weight);
+            auto weight_ttype = weight.tensorType();
+            int64_t M = weight_ttype.getDim(0);       // 用 getDim() 而非 shape()
+            int64_t K = weight_ttype.getDim(1) * 4;   // 解包后的实际维度
             auto bitlinear = tdpu::BitLinear(input, weight, K, M);
             net.replaceOpKeepUses(matmul, bitlinear);
         });
@@ -322,8 +335,8 @@ static Pass ReplaceMatMulWithBitLinear() {
     };
     return NetworkPass(pass_func, PassInfo("tdpu.ReplaceMatMulWithBitLinear"));
 }
-ICRAFT_REGISTER_PASS("tdpu.ReplaceMatMulWithBitLinear")
-    .set_creator(ReplaceMatMulWithBitLinear);
+// 注册宏直接接受函数名
+ICRAFT_REGISTER_PASS(ReplaceMatMulWithBitLinear);
 ```
 
 ### Step 3.3 端到端验证
@@ -368,5 +381,30 @@ icraft run --json ./output/model_optimized.json --raw ./output/model_optimized.r
 ## 风险与注意事项
 
 - **编译环境**: Icraft SDK 编译必须在 Windows PowerShell 中进行，WSL 的 arm64 版本不支持编译
+- **MSVC 必须加 `/Zc:__cplusplus`**: 否则 SDK 内部 `wise_enum_detail.h` 会因 `__cplusplus` 宏值不正确而编译失败
 - **权重编码一致性**: `package_def.sv` 的编码 (W_NEG=2'b00, W_ZERO=2'b01, W_POS=2'b10) 与模型 safetensors 的 packed U8 编码一致，无需转换
-- **Icraft API 版本**: 具体 API 签名需以实际安装的 Icraft SDK 头文件为准，上述代码为基于文档的参考实现
+
+## Icraft SDK v3.33.1 API 踩坑记录
+
+以下是实际编译中发现的 API 与文档/猜测不一致之处，供后续开发参考：
+
+| 原始写法 (错误) | 正确写法 | 说明 |
+|---|---|---|
+| `OpNodeBase<T, OneResult>` | `OpNodeBase<T>` | 无 `OneResult` 模板参数 |
+| `#include <icraft-xir/core/op.h>` | `<icraft-xir/core/operation.h>` | 头文件名不同 |
+| `ICRAFT_REGISTER_OP_NODE(T).set_tinfer(...)` | 分开写 `ICRAFT_REGISTER_OP_NODE(T);` + `ICRAFT_REGISTER_TINFER(T, Target, lambda);` | 注册和类型推断必须分开 |
+| `input_type.shape()[0]` | `input_type.getDim(0)` | `TensorType` 无 `shape()` 方法 |
+| `TensorType(dtype, {dims})` | `TensorType(dtype, Array<int64_t>{dims}, Layout("RC"))` | 构造需要 3 参数，必须传 `Layout` |
+| `Tensor::Create(dtype, device)` | `Tensor(dtype).mallocOn(HostDevice::MemRegion())` | 无 `Create` 静态方法 |
+| `tensor.data<T>()` | `reinterpret_cast<T*>(tensor.data().cptr())` | `data()` 返回 `MemPtr`，需 `.cptr()` 获取 `char*` |
+| `(T*)tensor.data()` | `reinterpret_cast<T*>(tensor.data().cptr())` | `MemPtr` 不支持 C-style cast |
+| `IsOp<MatMul>()` | `IsOp<Matmul>()` | 类名是 `Matmul` (小写 m) |
+| `ICRAFT_REGISTER_PASS("name").set_creator(func)` | `ICRAFT_REGISTER_PASS(FuncName);` | 宏直接接受函数名 |
+| `Network::Create(name)` | `Network(name, Framework::ONNX, "1.0")` | 无 `Create` 静态方法，构造需要 3 参数 |
+| `Constant(type, data, size)` | `Params(shared_ptr, name, type)` | 无 `Constant` 类，用 `Params` 创建权重 |
+| `Input(TensorType)` | `Input(Array<TensorType>{...})` | 接受 `Array<TensorType>` |
+| `Output(Value)` | `Output(Array<Value>{...})` | 接受 `Array<Value>` |
+| `find_package(Icraft COMPONENTS ...)` | `find_package(Icraft-HostBackend REQUIRED)` | CMake 包名不同 |
+| test 链接 DLL | test 直接编译源文件 | DLL 无导出符号不生成 `.lib`，test 需直接编译 |
+| forward 3 参数 | forward 4 参数 (含 outputs) | `set_forward` 的 lambda 签名需要 4 个参数 |
+| forward 中 `inputs[1]` 取权重 | `op.paramsInputs()[0].data<uint8_t>().get()` | `inputs` 只含运行时张量，Params 权重需从 Operation 获取 |

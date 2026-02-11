@@ -10,6 +10,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # MSVC 编译参数 (与 Icraft 官方示例一致)
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zc:__cplusplus>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zi>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/permissive->")
 add_link_options("$<$<CXX_COMPILER_ID:MSVC>:/INCREMENTAL:NO>")
@@ -44,10 +45,14 @@ target_link_libraries(icraft.tdpu.bitlinear PRIVATE
 
 # ============================================================
 # 测试程序: 手动构建 XIR 网络验证
+# 直接编译插件源文件 (DLL 无导出符号, 不生成 .lib)
 # ============================================================
-add_executable(test_bitlinear test/test_bitlinear.cpp)
+add_executable(test_bitlinear
+    test/test_bitlinear.cpp
+    src/bitlinear_op.cpp
+    src/bitlinear_host_forward.cpp
+)
 target_include_directories(test_bitlinear PRIVATE include)
 target_link_libraries(test_bitlinear PRIVATE
-    icraft.tdpu.bitlinear
     Icraft::HostBackend
 )

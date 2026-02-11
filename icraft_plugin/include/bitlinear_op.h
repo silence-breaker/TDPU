@@ -14,7 +14,7 @@
  */
 #pragma once
 
-#include <icraft-xir/core/op.h>
+#include <icraft-xir/core/operation.h>
 #include <icraft-xir/core/network.h>
 
 namespace tdpu {
@@ -24,7 +24,7 @@ using namespace icraft::xir;
 // ============================================================
 // BitLinearNode: 算子容器类 (存储属性)
 // ============================================================
-class BitLinearNode : public OpNodeBase<BitLinearNode, OneResult> {
+class BitLinearNode : public OpNodeBase<BitLinearNode> {
 public:
     int64_t in_features;   // 输入特征维度 K
     int64_t out_features;  // 输出特征维度 M

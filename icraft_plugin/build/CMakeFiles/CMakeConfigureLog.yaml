@@ -37,6 +37,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -61,7 +70,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -69,6 +78,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "message-v1"
     backtrace:
@@ -85,9 +96,9 @@ events:
       The output was:
       0
       閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
-      鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:18:43 PM銆?
+      鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:33:26 PM銆?
       
-      鑺傜偣 1 涓婄殑椤圭洰鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)銆?
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)銆?
       PrepareForBuild:
         姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
         宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
@@ -100,7 +111,7 @@ events:
         CMakeCCompilerId.c
       Link:
         C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> \\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.exe
+        CompilerIdC.vcxproj -> D:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
@@ -108,13 +119,13 @@ events:
       FinalizeBuildStatus:
         姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濄€?
         姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
-      宸插畬鎴愮敓鎴愰」鐩€淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
       
       宸叉垚鍔熺敓鎴愩€?
           0 涓鍛?
           0 涓敊璇?
       
-      宸茬敤鏃堕棿 00:00:02.13
+      宸茬敤鏃堕棿 00:00:00.70
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -122,7 +133,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        //wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CompilerIdC/CompilerIdC.exe
+        D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "find-v1"
@@ -147,6 +158,11 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -155,7 +171,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -178,6 +193,8 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
@@ -185,6 +202,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -209,7 +235,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -217,6 +243,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "find-v1"
     backtrace:
@@ -240,6 +268,11 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -248,7 +281,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -271,10 +303,27 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Users/24779/bin/lld-link.com"
+      - "C:/Users/24779/bin/lld-link.exe"
+      - "C:/Users/24779/bin/lld-link"
+      - "F:/git/Git/mingw64/bin/lld-link.com"
+      - "F:/git/Git/mingw64/bin/lld-link.exe"
+      - "F:/git/Git/mingw64/bin/lld-link"
+      - "F:/git/Git/usr/local/bin/lld-link.com"
+      - "F:/git/Git/usr/local/bin/lld-link.exe"
+      - "F:/git/Git/usr/local/bin/lld-link"
+      - "F:/git/Git/usr/bin/lld-link.com"
+      - "F:/git/Git/usr/bin/lld-link.exe"
+      - "F:/git/Git/usr/bin/lld-link"
+      - "C:/Python314/Scripts/lld-link.com"
+      - "C:/Python314/Scripts/lld-link.exe"
+      - "C:/Python314/Scripts/lld-link"
       - "F:/Anaconda/install/lld-link.com"
       - "F:/Anaconda/install/lld-link.exe"
       - "F:/Anaconda/install/lld-link"
@@ -299,9 +348,6 @@ events:
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link.com"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link.exe"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link"
-      - "C:/Python314/Scripts/lld-link.com"
-      - "C:/Python314/Scripts/lld-link.exe"
-      - "C:/Python314/Scripts/lld-link"
       - "C:/Python314/lld-link.com"
       - "C:/Python314/lld-link.exe"
       - "C:/Python314/lld-link"
@@ -368,11 +414,26 @@ events:
       - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link.com"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link.exe"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link"
+      - "F:/git/Git/usr/bin/vendor_perl/lld-link.com"
+      - "F:/git/Git/usr/bin/vendor_perl/lld-link.exe"
+      - "F:/git/Git/usr/bin/vendor_perl/lld-link"
+      - "F:/git/Git/usr/bin/core_perl/lld-link.com"
+      - "F:/git/Git/usr/bin/core_perl/lld-link.exe"
+      - "F:/git/Git/usr/bin/core_perl/lld-link"
     found: false
     search_context:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -397,7 +458,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -405,6 +466,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "find-v1"
     backtrace:
@@ -426,6 +489,11 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -434,7 +502,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -457,6 +524,8 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
@@ -464,6 +533,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -488,7 +566,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -496,6 +574,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "find-v1"
     backtrace:
@@ -517,6 +597,11 @@ events:
       - "mt"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -525,7 +610,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -548,10 +632,27 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "C:/Users/24779/bin/mt.com"
+      - "C:/Users/24779/bin/mt.exe"
+      - "C:/Users/24779/bin/mt"
+      - "F:/git/Git/mingw64/bin/mt.com"
+      - "F:/git/Git/mingw64/bin/mt.exe"
+      - "F:/git/Git/mingw64/bin/mt"
+      - "F:/git/Git/usr/local/bin/mt.com"
+      - "F:/git/Git/usr/local/bin/mt.exe"
+      - "F:/git/Git/usr/local/bin/mt"
+      - "F:/git/Git/usr/bin/mt.com"
+      - "F:/git/Git/usr/bin/mt.exe"
+      - "F:/git/Git/usr/bin/mt"
+      - "C:/Python314/Scripts/mt.com"
+      - "C:/Python314/Scripts/mt.exe"
+      - "C:/Python314/Scripts/mt"
       - "F:/Anaconda/install/mt.com"
       - "F:/Anaconda/install/mt.exe"
       - "F:/Anaconda/install/mt"
@@ -576,9 +677,6 @@ events:
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/mt.com"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/mt.exe"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/mt"
-      - "C:/Python314/Scripts/mt.com"
-      - "C:/Python314/Scripts/mt.exe"
-      - "C:/Python314/Scripts/mt"
       - "C:/Python314/mt.com"
       - "C:/Python314/mt.exe"
       - "C:/Python314/mt"
@@ -645,11 +743,26 @@ events:
       - "C:/Users/24779/AppData/Local/Programs/Ollama/mt.com"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/mt.exe"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/mt"
+      - "F:/git/Git/usr/bin/vendor_perl/mt.com"
+      - "F:/git/Git/usr/bin/vendor_perl/mt.exe"
+      - "F:/git/Git/usr/bin/vendor_perl/mt"
+      - "F:/git/Git/usr/bin/core_perl/mt.com"
+      - "F:/git/Git/usr/bin/core_perl/mt.exe"
+      - "F:/git/Git/usr/bin/core_perl/mt"
     found: false
     search_context:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -674,7 +787,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -682,6 +795,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "find-v1"
     backtrace:
@@ -703,6 +818,11 @@ events:
       - "lib"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -711,7 +831,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -734,6 +853,8 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
@@ -741,6 +862,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -765,7 +895,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -773,6 +903,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "find-v1"
     backtrace:
@@ -802,6 +934,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -826,7 +967,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -834,6 +975,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "message-v1"
     backtrace:
@@ -850,9 +993,9 @@ events:
       The output was:
       0
       閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
-      鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:18:47 PM銆?
+      鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:33:26 PM銆?
       
-      鑺傜偣 1 涓婄殑椤圭洰鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
       PrepareForBuild:
         姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
         宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
@@ -865,7 +1008,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> \\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> D:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -873,13 +1016,13 @@ events:
       FinalizeBuildStatus:
         姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濄€?
         姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
-      宸插畬鎴愮敓鎴愰」鐩€淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
       
       宸叉垚鍔熺敓鎴愩€?
           0 涓鍛?
           0 涓敊璇?
       
-      宸茬敤鏃堕棿 00:00:01.66
+      宸茬敤鏃堕棿 00:00:00.66
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -887,7 +1030,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        //wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CompilerIdCXX/CompilerIdCXX.exe
+        D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "find-v1"
@@ -912,6 +1055,11 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -920,7 +1068,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -943,10 +1090,27 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Users/24779/bin/lld-link.com"
+      - "C:/Users/24779/bin/lld-link.exe"
+      - "C:/Users/24779/bin/lld-link"
+      - "F:/git/Git/mingw64/bin/lld-link.com"
+      - "F:/git/Git/mingw64/bin/lld-link.exe"
+      - "F:/git/Git/mingw64/bin/lld-link"
+      - "F:/git/Git/usr/local/bin/lld-link.com"
+      - "F:/git/Git/usr/local/bin/lld-link.exe"
+      - "F:/git/Git/usr/local/bin/lld-link"
+      - "F:/git/Git/usr/bin/lld-link.com"
+      - "F:/git/Git/usr/bin/lld-link.exe"
+      - "F:/git/Git/usr/bin/lld-link"
+      - "C:/Python314/Scripts/lld-link.com"
+      - "C:/Python314/Scripts/lld-link.exe"
+      - "C:/Python314/Scripts/lld-link"
       - "F:/Anaconda/install/lld-link.com"
       - "F:/Anaconda/install/lld-link.exe"
       - "F:/Anaconda/install/lld-link"
@@ -971,9 +1135,6 @@ events:
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link.com"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link.exe"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link"
-      - "C:/Python314/Scripts/lld-link.com"
-      - "C:/Python314/Scripts/lld-link.exe"
-      - "C:/Python314/Scripts/lld-link"
       - "C:/Python314/lld-link.com"
       - "C:/Python314/lld-link.exe"
       - "C:/Python314/lld-link"
@@ -1040,11 +1201,26 @@ events:
       - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link.com"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link.exe"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link"
+      - "F:/git/Git/usr/bin/vendor_perl/lld-link.com"
+      - "F:/git/Git/usr/bin/vendor_perl/lld-link.exe"
+      - "F:/git/Git/usr/bin/vendor_perl/lld-link"
+      - "F:/git/Git/usr/bin/core_perl/lld-link.com"
+      - "F:/git/Git/usr/bin/core_perl/lld-link.exe"
+      - "F:/git/Git/usr/bin/core_perl/lld-link"
     found: false
     search_context:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -1069,7 +1245,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -1077,6 +1253,8 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
   -
     kind: "find-v1"
     backtrace:
@@ -1103,6 +1281,11 @@ events:
       - "C:/Icraft/CLI/cmake/bin/"
       - "C:/Icraft/CLI/cmake/sbin/"
       - "C:/Icraft/CLI/cmake/"
+      - "C:/Users/24779/bin/"
+      - "F:/git/Git/mingw64/bin/"
+      - "F:/git/Git/usr/local/bin/"
+      - "F:/git/Git/usr/bin/"
+      - "C:/Python314/Scripts/"
       - "F:/Anaconda/install/"
       - "F:/Anaconda/install/Library/mingw-w64/bin/"
       - "F:/Anaconda/install/Library/usr/bin/"
@@ -1111,7 +1294,6 @@ events:
       - "F:/Anaconda/install/bin/"
       - "F:/Anaconda/install/condabin/"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
-      - "C:/Python314/Scripts/"
       - "C:/Python314/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1134,6 +1316,8 @@ events:
       - "F:/vscode/Microsoft VS Code/bin/"
       - "C:/Users/24779/AppData/Roaming/npm/"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "F:/git/Git/usr/bin/vendor_perl/"
+      - "F:/git/Git/usr/bin/core_perl/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -1143,9 +1327,9 @@ events:
       - "F:/Cmake/install/bin/"
       - "F:/Cmake/install/sbin/"
       - "F:/Cmake/install/"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/"
+      - "C:/Program Files/icraft_bitlinear_plugin/bin/"
+      - "C:/Program Files/icraft_bitlinear_plugin/sbin/"
+      - "C:/Program Files/icraft_bitlinear_plugin/"
     searched_directories:
       - "C:/Icraft/CLI/cmake/bin/rc.com"
       - "C:/Icraft/CLI/cmake/bin/rc.exe"
@@ -1156,6 +1340,21 @@ events:
       - "C:/Icraft/CLI/cmake/rc.com"
       - "C:/Icraft/CLI/cmake/rc.exe"
       - "C:/Icraft/CLI/cmake/rc"
+      - "C:/Users/24779/bin/rc.com"
+      - "C:/Users/24779/bin/rc.exe"
+      - "C:/Users/24779/bin/rc"
+      - "F:/git/Git/mingw64/bin/rc.com"
+      - "F:/git/Git/mingw64/bin/rc.exe"
+      - "F:/git/Git/mingw64/bin/rc"
+      - "F:/git/Git/usr/local/bin/rc.com"
+      - "F:/git/Git/usr/local/bin/rc.exe"
+      - "F:/git/Git/usr/local/bin/rc"
+      - "F:/git/Git/usr/bin/rc.com"
+      - "F:/git/Git/usr/bin/rc.exe"
+      - "F:/git/Git/usr/bin/rc"
+      - "C:/Python314/Scripts/rc.com"
+      - "C:/Python314/Scripts/rc.exe"
+      - "C:/Python314/Scripts/rc"
       - "F:/Anaconda/install/rc.com"
       - "F:/Anaconda/install/rc.exe"
       - "F:/Anaconda/install/rc"
@@ -1180,9 +1379,6 @@ events:
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/rc.com"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/rc.exe"
       - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/rc"
-      - "C:/Python314/Scripts/rc.com"
-      - "C:/Python314/Scripts/rc.exe"
-      - "C:/Python314/Scripts/rc"
       - "C:/Python314/rc.com"
       - "C:/Python314/rc.exe"
       - "C:/Python314/rc"
@@ -1249,6 +1445,12 @@ events:
       - "C:/Users/24779/AppData/Local/Programs/Ollama/rc.com"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/rc.exe"
       - "C:/Users/24779/AppData/Local/Programs/Ollama/rc"
+      - "F:/git/Git/usr/bin/vendor_perl/rc.com"
+      - "F:/git/Git/usr/bin/vendor_perl/rc.exe"
+      - "F:/git/Git/usr/bin/vendor_perl/rc"
+      - "F:/git/Git/usr/bin/core_perl/rc.com"
+      - "F:/git/Git/usr/bin/core_perl/rc.exe"
+      - "F:/git/Git/usr/bin/core_perl/rc"
       - "C:/Program Files/bin/rc.com"
       - "C:/Program Files/bin/rc.exe"
       - "C:/Program Files/bin/rc"
@@ -1276,20 +1478,29 @@ events:
       - "F:/Cmake/install/rc.com"
       - "F:/Cmake/install/rc.exe"
       - "F:/Cmake/install/rc"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/rc.com"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/rc.exe"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/rc"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/rc.com"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/rc.exe"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/rc"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/rc.com"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/rc.exe"
-      - "C:/Program Files (x86)/icraft_bitlinear_plugin/rc"
+      - "C:/Program Files/icraft_bitlinear_plugin/bin/rc.com"
+      - "C:/Program Files/icraft_bitlinear_plugin/bin/rc.exe"
+      - "C:/Program Files/icraft_bitlinear_plugin/bin/rc"
+      - "C:/Program Files/icraft_bitlinear_plugin/sbin/rc.com"
+      - "C:/Program Files/icraft_bitlinear_plugin/sbin/rc.exe"
+      - "C:/Program Files/icraft_bitlinear_plugin/sbin/rc"
+      - "C:/Program Files/icraft_bitlinear_plugin/rc.com"
+      - "C:/Program Files/icraft_bitlinear_plugin/rc.exe"
+      - "C:/Program Files/icraft_bitlinear_plugin/rc"
     found: false
     search_context:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -1314,7 +1525,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -1322,12 +1533,14 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/icraft_bitlinear_plugin"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "F:/Cmake/install"
-        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "C:/Program Files/icraft_bitlinear_plugin"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1337,8 +1550,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-7ecque"
-      binary: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-7ecque"
+      source: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-i2gjp6"
+      binary: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-i2gjp6"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1347,39 +1560,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-7ecque'
+        Change Dir: 'D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-i2gjp6'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c6ec0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3e46c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
-        鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:18:51 PM銆?
+        鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:33:27 PM銆?
         
-        鑺傜偣 1 涓婄殑椤圭洰鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7ecque\\cmTC_c6ec0.vcxproj鈥?榛樿鐩爣)銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i2gjp6\\cmTC_3e46c.vcxproj鈥?榛樿鐩爣)銆?
         PrepareForBuild:
           宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
-          姝ｅ湪鍒涘缓鐩綍鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7ecque\\Debug\\鈥濄€?
-          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c6ec0.dir\\Debug\\cmTC_c6ec0.tlog\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i2gjp6\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_3e46c.dir\\Debug\\cmTC_3e46c.tlog\\鈥濄€?
         InitializeBuildStatus:
-          姝ｅ湪鍒涘缓鈥渃mTC_c6ec0.dir\\Debug\\cmTC_c6ec0.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
-          姝ｅ湪瀵光€渃mTC_c6ec0.dir\\Debug\\cmTC_c6ec0.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+          姝ｅ湪鍒涘缓鈥渃mTC_3e46c.dir\\Debug\\cmTC_3e46c.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_3e46c.dir\\Debug\\cmTC_3e46c.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c6ec0.dir\\Debug\\\\" /Fd"cmTC_c6ec0.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_3e46c.dir\\Debug\\\\" /Fd"cmTC_3e46c.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.44.35222 鐗?
           鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c6ec0.dir\\Debug\\\\" /Fd"cmTC_c6ec0.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_3e46c.dir\\Debug\\\\" /Fd"cmTC_3e46c.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"\\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7ecque\\Debug\\cmTC_c6ec0.exe" /INCREMENTAL /ILK:"cmTC_c6ec0.dir\\Debug\\cmTC_c6ec0.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-7ecque/Debug/cmTC_c6ec0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-7ecque/Debug/cmTC_c6ec0.lib" /MACHINE:X64  /machine:x64 cmTC_c6ec0.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_c6ec0.vcxproj -> \\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7ecque\\Debug\\cmTC_c6ec0.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i2gjp6\\Debug\\cmTC_3e46c.exe" /INCREMENTAL /ILK:"cmTC_3e46c.dir\\Debug\\cmTC_3e46c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-i2gjp6/Debug/cmTC_3e46c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-i2gjp6/Debug/cmTC_3e46c.lib" /MACHINE:X64  /machine:x64 cmTC_3e46c.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_3e46c.vcxproj -> D:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i2gjp6\\Debug\\cmTC_3e46c.exe
         FinalizeBuildStatus:
-          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_c6ec0.dir\\Debug\\cmTC_c6ec0.tlog\\unsuccessfulbuild鈥濄€?
-          姝ｅ湪瀵光€渃mTC_c6ec0.dir\\Debug\\cmTC_c6ec0.tlog\\cmTC_c6ec0.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
-        宸插畬鎴愮敓鎴愰」鐩€淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7ecque\\cmTC_c6ec0.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_3e46c.dir\\Debug\\cmTC_3e46c.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_3e46c.dir\\Debug\\cmTC_3e46c.tlog\\cmTC_3e46c.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i2gjp6\\cmTC_3e46c.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
         
         宸叉垚鍔熺敓鎴愩€?
             0 涓鍛?
             0 涓敊璇?
         
-        宸茬敤鏃堕棿 00:00:02.26
+        宸茬敤鏃堕棿 00:00:00.59
         
       exitCode: 0
   -
@@ -1419,8 +1632,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-yc2gzi"
-      binary: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-yc2gzi"
+      source: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-w132ep"
+      binary: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-w132ep"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1430,39 +1643,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-yc2gzi'
+        Change Dir: 'D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-w132ep'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_493ba.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_397ee.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
-        鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:18:56 PM銆?
+        鐢熸垚鍚姩鏃堕棿涓?2/11/2026 1:33:28 PM銆?
         
-        鑺傜偣 1 涓婄殑椤圭洰鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yc2gzi\\cmTC_493ba.vcxproj鈥?榛樿鐩爣)銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w132ep\\cmTC_397ee.vcxproj鈥?榛樿鐩爣)銆?
         PrepareForBuild:
           宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
-          姝ｅ湪鍒涘缓鐩綍鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yc2gzi\\Debug\\鈥濄€?
-          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_493ba.dir\\Debug\\cmTC_493ba.tlog\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w132ep\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_397ee.dir\\Debug\\cmTC_397ee.tlog\\鈥濄€?
         InitializeBuildStatus:
-          姝ｅ湪鍒涘缓鈥渃mTC_493ba.dir\\Debug\\cmTC_493ba.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
-          姝ｅ湪瀵光€渃mTC_493ba.dir\\Debug\\cmTC_493ba.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+          姝ｅ湪鍒涘缓鈥渃mTC_397ee.dir\\Debug\\cmTC_397ee.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_397ee.dir\\Debug\\cmTC_397ee.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_493ba.dir\\Debug\\\\" /Fd"cmTC_493ba.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_397ee.dir\\Debug\\\\" /Fd"cmTC_397ee.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.44.35222 鐗?
           鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_493ba.dir\\Debug\\\\" /Fd"cmTC_493ba.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_397ee.dir\\Debug\\\\" /Fd"cmTC_397ee.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"\\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yc2gzi\\Debug\\cmTC_493ba.exe" /INCREMENTAL /ILK:"cmTC_493ba.dir\\Debug\\cmTC_493ba.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-yc2gzi/Debug/cmTC_493ba.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-yc2gzi/Debug/cmTC_493ba.lib" /MACHINE:X64  /machine:x64 cmTC_493ba.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_493ba.vcxproj -> \\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yc2gzi\\Debug\\cmTC_493ba.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w132ep\\Debug\\cmTC_397ee.exe" /INCREMENTAL /ILK:"cmTC_397ee.dir\\Debug\\cmTC_397ee.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-w132ep/Debug/cmTC_397ee.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-w132ep/Debug/cmTC_397ee.lib" /MACHINE:X64  /machine:x64 cmTC_397ee.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_397ee.vcxproj -> D:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w132ep\\Debug\\cmTC_397ee.exe
         FinalizeBuildStatus:
-          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_493ba.dir\\Debug\\cmTC_493ba.tlog\\unsuccessfulbuild鈥濄€?
-          姝ｅ湪瀵光€渃mTC_493ba.dir\\Debug\\cmTC_493ba.tlog\\cmTC_493ba.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
-        宸插畬鎴愮敓鎴愰」鐩€淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yc2gzi\\cmTC_493ba.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_397ee.dir\\Debug\\cmTC_397ee.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_397ee.dir\\Debug\\cmTC_397ee.tlog\\cmTC_397ee.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\SYSU\\JC\\Code-space\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w132ep\\cmTC_397ee.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
         
         宸叉垚鍔熺敓鎴愩€?
             0 涓鍛?
             0 涓敊璇?
         
-        宸茬敤鏃堕棿 00:00:02.18
+        宸茬敤鏃堕棿 00:00:00.58
         
       exitCode: 0
   -
@@ -1538,11 +1751,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-UtilsConfig.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-UtilsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-utils-config.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-utils-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -1559,6 +1772,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -1583,7 +1805,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -1591,12 +1813,14 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/icraft_bitlinear_plugin"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "F:/Cmake/install"
-        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "C:/Program Files/icraft_bitlinear_plugin"
   -
     kind: "find_package-v1"
     backtrace:
@@ -1639,11 +1863,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-XIRConfig.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-XIRConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-xir-config.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-xir-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -1660,6 +1884,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -1684,7 +1917,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -1692,12 +1925,14 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/icraft_bitlinear_plugin"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "F:/Cmake/install"
-        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "C:/Program Files/icraft_bitlinear_plugin"
   -
     kind: "find_package-v1"
     backtrace:
@@ -1737,11 +1972,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-XRTConfig.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-XRTConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-xrt-config.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-xrt-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -1758,6 +1993,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -1782,7 +2026,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -1790,12 +2034,14 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/icraft_bitlinear_plugin"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "F:/Cmake/install"
-        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "C:/Program Files/icraft_bitlinear_plugin"
   -
     kind: "find_package-v1"
     backtrace:
@@ -1832,11 +2078,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-HostBackendConfig.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/Icraft-HostBackendConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-hostbackend-config.cmake"
+        path: "D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-hostbackend-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -1853,6 +2099,15 @@ events:
       ENV{CMAKE_PREFIX_PATH}:
         - "C:\\Icraft\\CLI\\cmake\\"
       ENV{PATH}:
+        - "C:\\Users\\24779\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\local\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "F:\\git\\Git\\mingw64\\bin"
+        - "F:\\git\\Git\\usr\\bin"
+        - "C:\\Users\\24779\\bin"
+        - "C:\\Python314\\Scripts"
         - "F:\\Anaconda\\install"
         - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
         - "F:\\Anaconda\\install\\Library\\usr\\bin"
@@ -1877,7 +2132,7 @@ events:
         - "C:\\Icraft\\CLI\\bin"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
         - "F:\\Cmake\\install\\bin"
-        - "f:\\Trae\\Trae\\bin"
+        - "F:\\Trae\\Trae\\bin"
         - "C:\\Users\\24779\\.local\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
         - "F:\\Antigravity\\Antigravity\\bin"
@@ -1885,10 +2140,12 @@ events:
         - "C:\\Users\\24779\\AppData\\Roaming\\npm"
         - "F:\\Cmake\\install\\bin"
         - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "F:\\git\\Git\\usr\\bin\\vendor_perl"
+        - "F:\\git\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/icraft_bitlinear_plugin"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "F:/Cmake/install"
-        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+        - "C:/Program Files/icraft_bitlinear_plugin"
 ...

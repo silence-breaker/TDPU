@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/cmake_install.cmake"
+		"D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

@@ -10,20 +10,24 @@
  */
 #include "bitlinear_op.h"
 #include <icraft-xir/core/network.h>
-#include <icraft-xir/core/tensor.h>
-#include <icraft-xir/core/type.h>
-#include <icraft-xir/ops/input.h>
-#include <icraft-xir/ops/output.h>
-#include <icraft-xir/ops/constant.h>
+#include <icraft-xir/core/data.h>
+#include <icraft-xir/core/data_type.h>
+#include <icraft-xir/core/layout.h>
 #include <icraft-xrt/core/session.h>
+#include <icraft-xrt/core/tensor.h>
 #include <icraft-backends/hostbackend/backend.h>
+#include <icraft-xrt/dev/host_device.h>
 #include <iostream>
 #include <cstdint>
 #include <cstring>
 #include <vector>
-#include <cmath>
+#include <memory>
 
 using namespace icraft::xir;
+using icraft::xrt::Session;
+using icraft::xrt::Tensor;
+using icraft::xrt::HostBackend;
+using icraft::xrt::HostDevice;
 
 // 生成测试权重: 全 +1 (packed uint8)
 // 编码: 2'b10 = +1, 每个 byte 存 4 个权重 = 0xAA
@@ -82,21 +86,28 @@ static bool run_test(const char* name,
     std::cout << "[TEST] " << name << " ..." << std::endl;
 
     // 1. 构建网络
-    auto network = Network::Create(name);
+    auto network = Network(name, Framework::ONNX, "1.0");
 
-    auto input_type = TensorType(IntegerType::SInt8(), {batch, K});
-    auto input_op = Input(input_type);
+    // Input: [batch, K] INT8
+    auto input_type = TensorType(IntegerType::SInt8(),
+        Array<int64_t>{batch, K}, Layout("RC"));
+    auto input_op = Input(Array<TensorType>{input_type});
     network.addOp(input_op);
 
+    // Weight: [M, K/4] packed uint8 (作为 Params)
     auto weight_type = TensorType(IntegerType::UInt8(),
-                                  {M, K / 4});
-    auto weight_op = Constant(weight_type, weights.data(), weights.size());
-    network.addOp(weight_op);
+        Array<int64_t>{M, K / 4}, Layout("RC"));
+    auto weight_data = std::shared_ptr<uint8_t[]>(
+        new uint8_t[weights.size()]);
+    std::memcpy(weight_data.get(), weights.data(), weights.size());
+    auto weight_param = Params(weight_data, "weight", weight_type);
 
-    auto bitlinear = tdpu::BitLinear(input_op[0], weight_op[0], K, M);
+    // BitLinear op
+    auto bitlinear = tdpu::BitLinear(input_op[0], weight_param, K, M);
     network.addOp(bitlinear);
 
-    auto output_op = Output(bitlinear[0]);
+    // Output
+    auto output_op = Output(Array<Value>{bitlinear[0]});
     network.addOp(output_op);
 
     // 2. 创建 Session
@@ -104,30 +115,34 @@ static bool run_test(const char* name,
         network, {HostDevice::Default()});
     session.apply();
 
-    // 3. 准备输入
-    auto input_tensor = Tensor::Create(input_type, HostDevice::Default());
-    auto* in_ptr = input_tensor.data<int8_t>();
-    for (int64_t i = 0; i < batch * K; i++) {
-        in_ptr[i] = input_val;
+    // 3. 准备输入 Tensor
+    auto input_tensor = Tensor(input_type).mallocOn(HostDevice::MemRegion());
+    {
+        std::vector<int8_t> input_data(batch * K, input_val);
+        input_tensor.write(0, reinterpret_cast<char*>(input_data.data()),
+                           input_data.size() * sizeof(int8_t));
     }
 
     // 4. 前向
     auto outputs = session.forward({input_tensor});
-    auto* out_ptr = outputs[0].data<int32_t>();
 
     // 5. 验证
     bool pass = true;
+    std::vector<int32_t> result(batch * M);
+    outputs[0].read(reinterpret_cast<char*>(result.data()), 0,
+                    result.size() * sizeof(int32_t));
+
     for (int64_t i = 0; i < batch * M; i++) {
-        if (out_ptr[i] != expected[i]) {
+        if (result[i] != expected[i]) {
             std::cout << "  FAIL at [" << i << "]: got "
-                      << out_ptr[i] << ", expected " << expected[i]
+                      << result[i] << ", expected " << expected[i]
                       << std::endl;
             pass = false;
         }
     }
 
     if (pass) {
-        std::cout << "  PASS (output[0]=" << out_ptr[0] << ")" << std::endl;
+        std::cout << "  PASS (output[0]=" << result[0] << ")" << std::endl;
     }
     return pass;
 }

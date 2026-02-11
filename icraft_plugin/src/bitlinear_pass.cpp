@@ -6,7 +6,9 @@
  */
 #include "bitlinear_op.h"
 #include <icraft-xir/core/pass.h>
+#include <icraft-xir/core/pattern.h>
 #include <icraft-xir/core/network.h>
+#include <icraft-xir/core/layout.h>
 #include <icraft-xir/ops/matmul.h>
 
 namespace tdpu {
@@ -15,28 +17,28 @@ using namespace icraft::xir;
 
 // 判断权重是否为 ternary packed 格式 (uint8 dtype)
 static bool is_ternary_weight(const Value& weight) {
-    auto dtype = weight.tensorType().dtype();
+    auto stype = weight.tensorType().getStorageType();
     // packed ternary 权重以 uint8 存储
-    return dtype == IntegerType::UInt8();
+    return stype.isUInt8();
 }
 
 static Pass ReplaceMatMulWithBitLinear() {
     auto pass_func = [](Network network, const PassContext& ctx) {
-        auto matmul_p = IsOp<MatMul>();
+        auto matmul_p = IsOp<Matmul>();
 
         network.rewrite(matmul_p, [&](Network& net, const MatchGroup& result) {
-            auto matmul = result.at(matmul_p);
+            Operation matmul = result.at(matmul_p);
 
             // 只替换权重为 ternary packed 的 MatMul
             auto weight = matmul->inputs[1];
             if (!is_ternary_weight(weight)) return;
 
             auto input = matmul->inputs[0];
-            auto weight_shape = weight.tensorType().shape();
+            auto weight_ttype = weight.tensorType();
 
             // weight shape: [out_features, in_features/4] (packed)
-            int64_t M = weight_shape[0];
-            int64_t K = weight_shape[1] * 4;  // 解包后的实际维度
+            int64_t M = weight_ttype.getDim(0);
+            int64_t K = weight_ttype.getDim(1) * 4;  // 解包后的实际维度
 
             auto bitlinear = BitLinear(input, weight, K, M);
             net.replaceOpKeepUses(matmul, bitlinear);
@@ -48,8 +50,7 @@ static Pass ReplaceMatMulWithBitLinear() {
     return NetworkPass(pass_func, PassInfo("tdpu.ReplaceMatMulWithBitLinear"));
 }
 
-// 注册 Pass
-ICRAFT_REGISTER_PASS("tdpu.ReplaceMatMulWithBitLinear")
-    .set_creator(ReplaceMatMulWithBitLinear);
+// 注册 Pass (宏接受 FCreator = std::function<Pass()>)
+ICRAFT_REGISTER_PASS(ReplaceMatMulWithBitLinear);
 
 } // namespace tdpu

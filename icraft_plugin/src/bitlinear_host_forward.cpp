@@ -9,13 +9,19 @@
  */
 #include "bitlinear_op.h"
 #include <icraft-backends/hostbackend/backend.h>
-#include <icraft-xir/core/tensor.h>
+#include <icraft-xrt/dev/host_device.h>
+#include <icraft-xir/core/layout.h>
+#include <icraft-xir/core/data.h>
 #include <cstdint>
 #include <vector>
+#include <iostream>
 
 namespace tdpu {
 
 using namespace icraft::xir;
+using icraft::xrt::Tensor;
+using icraft::xrt::HostBackend;
+using icraft::xrt::HostDevice;
 
 // 解包单个 ternary 权重: 从 packed byte 中提取第 idx 个 2-bit 值
 static inline int unpack_ternary(uint8_t packed, int idx) {
@@ -34,23 +40,31 @@ static auto bitlinear_init = [](const BitLinear& op, HostBackend backend) {
 // 前向: C++ ternary matmul (精确模拟 FPGA 行为, 整数无损)
 static auto bitlinear_forward = [](const BitLinear& op,
                                    const std::vector<Tensor>& inputs,
+                                   const std::vector<Tensor>& /*outputs*/,
                                    HostBackend backend)
     -> std::vector<Tensor>
 {
+    // inputs 只包含运行时张量 (激活值), 权重通过 Params 获取
     auto activation = inputs[0];  // [batch, K] INT8
-    auto weight     = inputs[1];  // [M, K/4] packed uint8
 
-    int64_t batch = activation.shape()[0];
     int64_t K = op->in_features;
     int64_t M = op->out_features;
 
-    // 分配输出 Tensor [batch, M] INT32
-    auto output_type = TensorType(IntegerType::SInt32(), {batch, M});
-    auto output = Tensor::Create(output_type, backend);
+    // 从算子的输入 Value 获取 batch 维度
+    auto input_ttype = op->inputs[0].tensorType();
+    int64_t batch = input_ttype.getDim(0);
 
-    auto* act_ptr = activation.data<int8_t>();
-    auto* w_ptr   = weight.data<uint8_t>();
-    auto* out_ptr = output.data<int32_t>();
+    // 从 Operation 的 Params 获取权重数据 (不在 inputs 向量中)
+    auto params_list = op.paramsInputs();
+    auto w_ptr = params_list[0].data<uint8_t>().get();
+
+    // 分配输出 Tensor [batch, M] INT32
+    auto output_type = TensorType(IntegerType::SInt32(),
+        Array<int64_t>{batch, M}, Layout("RC"));
+    auto output = Tensor(output_type).mallocOn(HostDevice::MemRegion());
+
+    auto* act_ptr = reinterpret_cast<const int8_t*>(activation.data().cptr());
+    auto* out_ptr = reinterpret_cast<int32_t*>(output.data().cptr());
 
     // Ternary MatMul: 逐元素累加, 无 DSP 乘法
     for (int64_t b = 0; b < batch; b++) {
@@ -59,8 +73,8 @@ static auto bitlinear_forward = [](const BitLinear& op,
             for (int64_t k = 0; k < K; k++) {
                 int8_t a = act_ptr[b * K + k];
                 // 每个 uint8 包含 4 个 ternary 权重
-                int byte_idx = (m * K + k) / 4;
-                int bit_idx  = (m * K + k) % 4;
+                int byte_idx = static_cast<int>((m * K + k) / 4);
+                int bit_idx  = static_cast<int>((m * K + k) % 4);
                 int w = unpack_ternary(w_ptr[byte_idx], bit_idx);
                 // Ternary multiply-accumulate
                 if (w == 1)       acc += a;

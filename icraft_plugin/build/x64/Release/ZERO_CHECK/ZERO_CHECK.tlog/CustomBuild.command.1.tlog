@@ -1,6 +1,6 @@
-^\\WSL.LOCALHOST\UBUNTU-22.04\HOME\SILENCE_BREAKER\GIT\TDPU\ICRAFT_PLUGIN\BUILD\CMAKEFILES\403FCEDC1AEA013684CB3D2505694C38\GENERATE.STAMP.RULE
+^D:\SYSU\JC\CODE-SPACE\TDPU\ICRAFT_PLUGIN\BUILD\CMAKEFILES\12A14A7A6479D030017E5A6E9073A80D\GENERATE.STAMP.RULE
 setlocal
-F:\Cmake\install\bin\cmake.exe -S//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin -B//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file //wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/icraft_bitlinear_plugin.sln
+F:\Cmake\install\bin\cmake.exe -SD:/SYSU/JC/Code-space/TDPU/icraft_plugin -BD:/SYSU/JC/Code-space/TDPU/icraft_plugin/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/icraft_bitlinear_plugin.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

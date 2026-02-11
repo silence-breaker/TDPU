@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(powershell -Command \"cd ''d:\\\\SYSU\\\\JC\\\\Code-space\\\\TDPU\\\\icraft_plugin\\\\build''; cmake --build . --config Release --target icraft.tdpu.bitlinear 2>&1\")",
+      "Bash(cmake:*)",
+      "Bash(cmake --build:*)",
+      "Bash(./Release/test_bitlinear.exe)",
+      "Bash(echo:*)",
+      "Bash(conda activate:*)",
+      "Bash(python:*)"
     ]
   }
 }

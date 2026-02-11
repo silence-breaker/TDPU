@@ -1,9 +1,4 @@
 # CMake generation dependency list for this directory.
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/CMakeLists.txt
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeSystem.cmake
 C:/Icraft/CLI v3.33.1/cmake/icraft-hostbackend-config-version.cmake
 C:/Icraft/CLI v3.33.1/cmake/icraft-hostbackend-config.cmake
 C:/Icraft/CLI v3.33.1/cmake/icraft-hostbackend-targets-win-release.cmake
@@ -20,6 +15,11 @@ C:/Icraft/CLI v3.33.1/cmake/icraft-xrt-config-version.cmake
 C:/Icraft/CLI v3.33.1/cmake/icraft-xrt-config.cmake
 C:/Icraft/CLI v3.33.1/cmake/icraft-xrt-targets-win-release.cmake
 C:/Icraft/CLI v3.33.1/cmake/icraft-xrt-targets-win.cmake
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/CMakeLists.txt
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CMakeSystem.cmake
 F:/Cmake/install/share/cmake-4.2/Modules/CMakeCInformation.cmake
 F:/Cmake/install/share/cmake-4.2/Modules/CMakeCXXInformation.cmake
 F:/Cmake/install/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake

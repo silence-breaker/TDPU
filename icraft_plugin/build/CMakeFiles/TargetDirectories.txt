@@ -1,4 +1,4 @@
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/icraft.tdpu.bitlinear.dir
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/test_bitlinear.dir
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/ALL_BUILD.dir
-//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/ZERO_CHECK.dir
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/icraft.tdpu.bitlinear.dir
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/test_bitlinear.dir
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/ALL_BUILD.dir
+D:/SYSU/JC/Code-space/TDPU/icraft_plugin/build/CMakeFiles/ZERO_CHECK.dir
