@@ -59,3 +59,7 @@
 
 * WSL环境下安装的Icraft工具链是arm64架构，而且不具备编译功能
 * Windows环境下安装的Icraft工具链是x86_64架构，具备编译功能，所以验证代码的时候需要调用windows环境下的工具链进行编译（Icraft工具链已经配置到环境变量PATH中，直接在powershell中调用即可）
+
+## 工作区启动说明
+
+* 每次在工作区中跑代码都要记得激活conda环境，命令为：`conda activate RV_AI_FPGA`

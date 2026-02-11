@@ -1,0 +1,9 @@
+# bitlinear_test.toml - Icraft 运行配置 (HostBackend 仿真)
+#
+# 用法 (Windows PowerShell):
+#   icraft run --config config/bitlinear_test.toml
+
+[run]
+backend = "host"
+json = "./output/bitlinear_test.json"
+raw = "./output/bitlinear_test.raw"

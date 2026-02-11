@@ -1,0 +1,1489 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/"
+    found: "F:/Cmake/install/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
+      鐢熸垚鍚姩鏃堕棿涓?2/11/2026 12:38:08 PM銆?
+      
+      鑺傜偣 1 涓婄殑椤圭洰鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdCXX.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> \\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:04.29
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        //wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/4.2.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/Anaconda/install/"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/"
+      - "F:/Anaconda/install/Library/usr/bin/"
+      - "F:/Anaconda/install/Library/bin/"
+      - "F:/Anaconda/install/Scripts/"
+      - "F:/Anaconda/install/bin/"
+      - "F:/Anaconda/install/condabin/"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "F:/git/Git/cmd/"
+      - "F:/node/install/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Icraft/CLI/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Trae/Trae/bin/"
+      - "C:/Users/24779/.local/bin/"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/"
+      - "F:/Antigravity/Antigravity/bin/"
+      - "F:/vscode/Microsoft VS Code/bin/"
+      - "C:/Users/24779/AppData/Roaming/npm/"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/Anaconda/install/"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/"
+      - "F:/Anaconda/install/Library/usr/bin/"
+      - "F:/Anaconda/install/Library/bin/"
+      - "F:/Anaconda/install/Scripts/"
+      - "F:/Anaconda/install/bin/"
+      - "F:/Anaconda/install/condabin/"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "F:/git/Git/cmd/"
+      - "F:/node/install/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Icraft/CLI/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Trae/Trae/bin/"
+      - "C:/Users/24779/.local/bin/"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/"
+      - "F:/Antigravity/Antigravity/bin/"
+      - "F:/vscode/Microsoft VS Code/bin/"
+      - "C:/Users/24779/AppData/Roaming/npm/"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "F:/Anaconda/install/lld-link.com"
+      - "F:/Anaconda/install/lld-link.exe"
+      - "F:/Anaconda/install/lld-link"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/lld-link.com"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/lld-link.exe"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/lld-link"
+      - "F:/Anaconda/install/Library/usr/bin/lld-link.com"
+      - "F:/Anaconda/install/Library/usr/bin/lld-link.exe"
+      - "F:/Anaconda/install/Library/usr/bin/lld-link"
+      - "F:/Anaconda/install/Library/bin/lld-link.com"
+      - "F:/Anaconda/install/Library/bin/lld-link.exe"
+      - "F:/Anaconda/install/Library/bin/lld-link"
+      - "F:/Anaconda/install/Scripts/lld-link.com"
+      - "F:/Anaconda/install/Scripts/lld-link.exe"
+      - "F:/Anaconda/install/Scripts/lld-link"
+      - "F:/Anaconda/install/bin/lld-link.com"
+      - "F:/Anaconda/install/bin/lld-link.exe"
+      - "F:/Anaconda/install/bin/lld-link"
+      - "F:/Anaconda/install/condabin/lld-link.com"
+      - "F:/Anaconda/install/condabin/lld-link.exe"
+      - "F:/Anaconda/install/condabin/lld-link"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link.com"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/lld-link"
+      - "C:/Python314/Scripts/lld-link.com"
+      - "C:/Python314/Scripts/lld-link.exe"
+      - "C:/Python314/Scripts/lld-link"
+      - "C:/Python314/lld-link.com"
+      - "C:/Python314/lld-link.exe"
+      - "C:/Python314/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link"
+      - "F:/git/Git/cmd/lld-link.com"
+      - "F:/git/Git/cmd/lld-link.exe"
+      - "F:/git/Git/cmd/lld-link"
+      - "F:/node/install/lld-link.com"
+      - "F:/node/install/lld-link.exe"
+      - "F:/node/install/lld-link"
+      - "C:/ProgramData/chocolatey/bin/lld-link.com"
+      - "C:/ProgramData/chocolatey/bin/lld-link.exe"
+      - "C:/ProgramData/chocolatey/bin/lld-link"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link"
+      - "C:/Icraft/CLI/bin/lld-link.com"
+      - "C:/Icraft/CLI/bin/lld-link.exe"
+      - "C:/Icraft/CLI/bin/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "F:/Cmake/install/bin/lld-link.com"
+      - "F:/Cmake/install/bin/lld-link.exe"
+      - "F:/Cmake/install/bin/lld-link"
+      - "F:/Trae/Trae/bin/lld-link.com"
+      - "F:/Trae/Trae/bin/lld-link.exe"
+      - "F:/Trae/Trae/bin/lld-link"
+      - "C:/Users/24779/.local/bin/lld-link.com"
+      - "C:/Users/24779/.local/bin/lld-link.exe"
+      - "C:/Users/24779/.local/bin/lld-link"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "F:/Antigravity/Antigravity/bin/lld-link.com"
+      - "F:/Antigravity/Antigravity/bin/lld-link.exe"
+      - "F:/Antigravity/Antigravity/bin/lld-link"
+      - "F:/vscode/Microsoft VS Code/bin/lld-link.com"
+      - "F:/vscode/Microsoft VS Code/bin/lld-link.exe"
+      - "F:/vscode/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/24779/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/24779/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/24779/AppData/Roaming/npm/lld-link"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link.com"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link.exe"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/lld-link"
+    found: false
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/Anaconda/install/"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/"
+      - "F:/Anaconda/install/Library/usr/bin/"
+      - "F:/Anaconda/install/Library/bin/"
+      - "F:/Anaconda/install/Scripts/"
+      - "F:/Anaconda/install/bin/"
+      - "F:/Anaconda/install/condabin/"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "F:/git/Git/cmd/"
+      - "F:/node/install/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Icraft/CLI/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Trae/Trae/bin/"
+      - "C:/Users/24779/.local/bin/"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/"
+      - "F:/Antigravity/Antigravity/bin/"
+      - "F:/vscode/Microsoft VS Code/bin/"
+      - "C:/Users/24779/AppData/Roaming/npm/"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/Anaconda/install/"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/"
+      - "F:/Anaconda/install/Library/usr/bin/"
+      - "F:/Anaconda/install/Library/bin/"
+      - "F:/Anaconda/install/Scripts/"
+      - "F:/Anaconda/install/bin/"
+      - "F:/Anaconda/install/condabin/"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "F:/git/Git/cmd/"
+      - "F:/node/install/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Icraft/CLI/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Trae/Trae/bin/"
+      - "C:/Users/24779/.local/bin/"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/"
+      - "F:/Antigravity/Antigravity/bin/"
+      - "F:/vscode/Microsoft VS Code/bin/"
+      - "C:/Users/24779/AppData/Roaming/npm/"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "F:/Anaconda/install/mt.com"
+      - "F:/Anaconda/install/mt.exe"
+      - "F:/Anaconda/install/mt"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/mt.com"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/mt.exe"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/mt"
+      - "F:/Anaconda/install/Library/usr/bin/mt.com"
+      - "F:/Anaconda/install/Library/usr/bin/mt.exe"
+      - "F:/Anaconda/install/Library/usr/bin/mt"
+      - "F:/Anaconda/install/Library/bin/mt.com"
+      - "F:/Anaconda/install/Library/bin/mt.exe"
+      - "F:/Anaconda/install/Library/bin/mt"
+      - "F:/Anaconda/install/Scripts/mt.com"
+      - "F:/Anaconda/install/Scripts/mt.exe"
+      - "F:/Anaconda/install/Scripts/mt"
+      - "F:/Anaconda/install/bin/mt.com"
+      - "F:/Anaconda/install/bin/mt.exe"
+      - "F:/Anaconda/install/bin/mt"
+      - "F:/Anaconda/install/condabin/mt.com"
+      - "F:/Anaconda/install/condabin/mt.exe"
+      - "F:/Anaconda/install/condabin/mt"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/mt.com"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/mt.exe"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/mt"
+      - "C:/Python314/Scripts/mt.com"
+      - "C:/Python314/Scripts/mt.exe"
+      - "C:/Python314/Scripts/mt"
+      - "C:/Python314/mt.com"
+      - "C:/Python314/mt.exe"
+      - "C:/Python314/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt"
+      - "F:/git/Git/cmd/mt.com"
+      - "F:/git/Git/cmd/mt.exe"
+      - "F:/git/Git/cmd/mt"
+      - "F:/node/install/mt.com"
+      - "F:/node/install/mt.exe"
+      - "F:/node/install/mt"
+      - "C:/ProgramData/chocolatey/bin/mt.com"
+      - "C:/ProgramData/chocolatey/bin/mt.exe"
+      - "C:/ProgramData/chocolatey/bin/mt"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt"
+      - "C:/Icraft/CLI/bin/mt.com"
+      - "C:/Icraft/CLI/bin/mt.exe"
+      - "C:/Icraft/CLI/bin/mt"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt"
+      - "F:/Cmake/install/bin/mt.com"
+      - "F:/Cmake/install/bin/mt.exe"
+      - "F:/Cmake/install/bin/mt"
+      - "F:/Trae/Trae/bin/mt.com"
+      - "F:/Trae/Trae/bin/mt.exe"
+      - "F:/Trae/Trae/bin/mt"
+      - "C:/Users/24779/.local/bin/mt.com"
+      - "C:/Users/24779/.local/bin/mt.exe"
+      - "C:/Users/24779/.local/bin/mt"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/mt"
+      - "F:/Antigravity/Antigravity/bin/mt.com"
+      - "F:/Antigravity/Antigravity/bin/mt.exe"
+      - "F:/Antigravity/Antigravity/bin/mt"
+      - "F:/vscode/Microsoft VS Code/bin/mt.com"
+      - "F:/vscode/Microsoft VS Code/bin/mt.exe"
+      - "F:/vscode/Microsoft VS Code/bin/mt"
+      - "C:/Users/24779/AppData/Roaming/npm/mt.com"
+      - "C:/Users/24779/AppData/Roaming/npm/mt.exe"
+      - "C:/Users/24779/AppData/Roaming/npm/mt"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/mt.com"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/mt.exe"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/mt"
+    found: false
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/Anaconda/install/"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/"
+      - "F:/Anaconda/install/Library/usr/bin/"
+      - "F:/Anaconda/install/Library/bin/"
+      - "F:/Anaconda/install/Scripts/"
+      - "F:/Anaconda/install/bin/"
+      - "F:/Anaconda/install/condabin/"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "F:/git/Git/cmd/"
+      - "F:/node/install/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Icraft/CLI/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Trae/Trae/bin/"
+      - "C:/Users/24779/.local/bin/"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/"
+      - "F:/Antigravity/Antigravity/bin/"
+      - "F:/vscode/Microsoft VS Code/bin/"
+      - "C:/Users/24779/AppData/Roaming/npm/"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:580 (enable_language)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:553 (__windows_compiler_msvc_enable_rc)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeCXXInformation.cmake:48 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Icraft/CLI/cmake/bin/"
+      - "C:/Icraft/CLI/cmake/sbin/"
+      - "C:/Icraft/CLI/cmake/"
+      - "F:/Anaconda/install/"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/"
+      - "F:/Anaconda/install/Library/usr/bin/"
+      - "F:/Anaconda/install/Library/bin/"
+      - "F:/Anaconda/install/Scripts/"
+      - "F:/Anaconda/install/bin/"
+      - "F:/Anaconda/install/condabin/"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "F:/git/Git/cmd/"
+      - "F:/node/install/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Icraft/CLI/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Trae/Trae/bin/"
+      - "C:/Users/24779/.local/bin/"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/"
+      - "F:/Antigravity/Antigravity/bin/"
+      - "F:/vscode/Microsoft VS Code/bin/"
+      - "C:/Users/24779/AppData/Roaming/npm/"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "F:/Cmake/install/bin/"
+      - "F:/Cmake/install/sbin/"
+      - "F:/Cmake/install/"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/"
+    searched_directories:
+      - "C:/Icraft/CLI/cmake/bin/rc.com"
+      - "C:/Icraft/CLI/cmake/bin/rc.exe"
+      - "C:/Icraft/CLI/cmake/bin/rc"
+      - "C:/Icraft/CLI/cmake/sbin/rc.com"
+      - "C:/Icraft/CLI/cmake/sbin/rc.exe"
+      - "C:/Icraft/CLI/cmake/sbin/rc"
+      - "C:/Icraft/CLI/cmake/rc.com"
+      - "C:/Icraft/CLI/cmake/rc.exe"
+      - "C:/Icraft/CLI/cmake/rc"
+      - "F:/Anaconda/install/rc.com"
+      - "F:/Anaconda/install/rc.exe"
+      - "F:/Anaconda/install/rc"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/rc.com"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/rc.exe"
+      - "F:/Anaconda/install/Library/mingw-w64/bin/rc"
+      - "F:/Anaconda/install/Library/usr/bin/rc.com"
+      - "F:/Anaconda/install/Library/usr/bin/rc.exe"
+      - "F:/Anaconda/install/Library/usr/bin/rc"
+      - "F:/Anaconda/install/Library/bin/rc.com"
+      - "F:/Anaconda/install/Library/bin/rc.exe"
+      - "F:/Anaconda/install/Library/bin/rc"
+      - "F:/Anaconda/install/Scripts/rc.com"
+      - "F:/Anaconda/install/Scripts/rc.exe"
+      - "F:/Anaconda/install/Scripts/rc"
+      - "F:/Anaconda/install/bin/rc.com"
+      - "F:/Anaconda/install/bin/rc.exe"
+      - "F:/Anaconda/install/bin/rc"
+      - "F:/Anaconda/install/condabin/rc.com"
+      - "F:/Anaconda/install/condabin/rc.exe"
+      - "F:/Anaconda/install/condabin/rc"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/rc.com"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/rc.exe"
+      - "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/rc"
+      - "C:/Python314/Scripts/rc.com"
+      - "C:/Python314/Scripts/rc.exe"
+      - "C:/Python314/Scripts/rc"
+      - "C:/Python314/rc.com"
+      - "C:/Python314/rc.exe"
+      - "C:/Python314/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc"
+      - "F:/git/Git/cmd/rc.com"
+      - "F:/git/Git/cmd/rc.exe"
+      - "F:/git/Git/cmd/rc"
+      - "F:/node/install/rc.com"
+      - "F:/node/install/rc.exe"
+      - "F:/node/install/rc"
+      - "C:/ProgramData/chocolatey/bin/rc.com"
+      - "C:/ProgramData/chocolatey/bin/rc.exe"
+      - "C:/ProgramData/chocolatey/bin/rc"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc"
+      - "C:/Icraft/CLI/bin/rc.com"
+      - "C:/Icraft/CLI/bin/rc.exe"
+      - "C:/Icraft/CLI/bin/rc"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc"
+      - "F:/Cmake/install/bin/rc.com"
+      - "F:/Cmake/install/bin/rc.exe"
+      - "F:/Cmake/install/bin/rc"
+      - "F:/Trae/Trae/bin/rc.com"
+      - "F:/Trae/Trae/bin/rc.exe"
+      - "F:/Trae/Trae/bin/rc"
+      - "C:/Users/24779/.local/bin/rc.com"
+      - "C:/Users/24779/.local/bin/rc.exe"
+      - "C:/Users/24779/.local/bin/rc"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/rc"
+      - "F:/Antigravity/Antigravity/bin/rc.com"
+      - "F:/Antigravity/Antigravity/bin/rc.exe"
+      - "F:/Antigravity/Antigravity/bin/rc"
+      - "F:/vscode/Microsoft VS Code/bin/rc.com"
+      - "F:/vscode/Microsoft VS Code/bin/rc.exe"
+      - "F:/vscode/Microsoft VS Code/bin/rc"
+      - "C:/Users/24779/AppData/Roaming/npm/rc.com"
+      - "C:/Users/24779/AppData/Roaming/npm/rc.exe"
+      - "C:/Users/24779/AppData/Roaming/npm/rc"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/rc.com"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/rc.exe"
+      - "C:/Users/24779/AppData/Local/Programs/Ollama/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "F:/Cmake/install/bin/rc.com"
+      - "F:/Cmake/install/bin/rc.exe"
+      - "F:/Cmake/install/bin/rc"
+      - "F:/Cmake/install/sbin/rc.com"
+      - "F:/Cmake/install/sbin/rc.exe"
+      - "F:/Cmake/install/sbin/rc"
+      - "F:/Cmake/install/rc.com"
+      - "F:/Cmake/install/rc.exe"
+      - "F:/Cmake/install/rc"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/rc.com"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/rc.exe"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/bin/rc"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/rc.com"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/rc.exe"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/sbin/rc"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/rc.com"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/rc.exe"
+      - "C:/Program Files (x86)/icraft_bitlinear_plugin/rc"
+    found: false
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "F:/Cmake/install"
+        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-6ox3iu"
+      binary: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-6ox3iu"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-6ox3iu'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d1bb2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
+        鐢熸垚鍚姩鏃堕棿涓?2/11/2026 12:38:16 PM銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6ox3iu\\cmTC_d1bb2.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6ox3iu\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_d1bb2.dir\\Debug\\cmTC_d1bb2.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_d1bb2.dir\\Debug\\cmTC_d1bb2.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_d1bb2.dir\\Debug\\cmTC_d1bb2.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_d1bb2.dir\\Debug\\\\" /Fd"cmTC_d1bb2.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.44.35222 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_d1bb2.dir\\Debug\\\\" /Fd"cmTC_d1bb2.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "F:\\Cmake\\install\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"\\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6ox3iu\\Debug\\cmTC_d1bb2.exe" /INCREMENTAL /ILK:"cmTC_d1bb2.dir\\Debug\\cmTC_d1bb2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-6ox3iu/Debug/cmTC_d1bb2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/CMakeScratch/TryCompile-6ox3iu/Debug/cmTC_d1bb2.lib" /MACHINE:X64  /machine:x64 cmTC_d1bb2.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_d1bb2.vcxproj -> \\\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6ox3iu\\Debug\\cmTC_d1bb2.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_d1bb2.dir\\Debug\\cmTC_d1bb2.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_d1bb2.dir\\Debug\\cmTC_d1bb2.tlog\\cmTC_d1bb2.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淺\\wsl.localhost\\Ubuntu-22.04\\home\\silence_breaker\\git\\TDPU\\icraft_plugin\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6ox3iu\\cmTC_d1bb2.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:02.13
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Cmake/install/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "F:/Cmake/install/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Icraft"
+    components:
+      -
+        name: "xir"
+        required: true
+        found: false
+      -
+        name: "xrt"
+        required: true
+        found: false
+      -
+        name: "hostbackend"
+        required: true
+        found: false
+    configs:
+      -
+        filename: "IcraftConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "icraft-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Icraft"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "//wsl.localhost/Ubuntu-22.04/home/silence_breaker/git/TDPU/icraft_plugin/build/CMakeFiles/pkgRedirects/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Icraft/CLI/cmake/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Icraft/CLI/cmake/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/mingw-w64/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/mingw-w64/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/usr/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/usr/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/cmake/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Library/cmake/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Scripts/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/Scripts/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/condabin/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Anaconda/install/condabin/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Python314/Scripts/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Python314/Scripts/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Python314/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Python314/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/git/Git/cmd/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/git/Git/cmd/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/node/install/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/node/install/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/ProgramData/chocolatey/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/ProgramData/chocolatey/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Docker/Docker/resources/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Icraft/CLI/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Icraft/CLI/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Icraft/CLI/cmake/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Icraft/CLI/cmake/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Cmake/install/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Cmake/install/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Trae/Trae/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Trae/Trae/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/.local/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/.local/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/AppData/Local/Microsoft/WindowsApps/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Antigravity/Antigravity/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/Antigravity/Antigravity/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/vscode/Microsoft VS Code/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "F:/vscode/Microsoft VS Code/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/AppData/Roaming/npm/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/AppData/Roaming/npm/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/AppData/Local/Programs/Ollama/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/24779/AppData/Local/Programs/Ollama/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/IcraftConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/icraft-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "C:\\Icraft\\CLI\\cmake\\"
+      ENV{PATH}:
+        - "F:\\Anaconda\\install"
+        - "F:\\Anaconda\\install\\Library\\mingw-w64\\bin"
+        - "F:\\Anaconda\\install\\Library\\usr\\bin"
+        - "F:\\Anaconda\\install\\Library\\bin"
+        - "F:\\Anaconda\\install\\Scripts"
+        - "F:\\Anaconda\\install\\bin"
+        - "F:\\Anaconda\\install\\condabin"
+        - "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe"
+        - "C:\\Python314\\Scripts"
+        - "C:\\Python314"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "F:\\git\\Git\\cmd"
+        - "F:\\node\\install"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Icraft\\CLI\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "F:\\Cmake\\install\\bin"
+        - "f:\\Trae\\Trae\\bin"
+        - "C:\\Users\\24779\\.local\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "F:\\Antigravity\\Antigravity\\bin"
+        - "F:\\vscode\\Microsoft VS Code\\bin"
+        - "C:\\Users\\24779\\AppData\\Roaming\\npm"
+        - "F:\\Cmake\\install\\bin"
+        - "C:\\Users\\24779\\AppData\\Local\\Programs\\Ollama"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/icraft_bitlinear_plugin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "F:/Cmake/install"
+        - "C:/Program Files (x86)/icraft_bitlinear_plugin"
+...
