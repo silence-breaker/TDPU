@@ -11,6 +11,9 @@
       <FullPath>D:\SYSU\JC\Code-space\TDPU\icraft_plugin\build\Release\test_bitlinear.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>D:\SYSU\JC\Code-space\TDPU\icraft_plugin\build\Release\test_real_weights.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>D:\SYSU\JC\Code-space\TDPU\icraft_plugin\build\x64\Release\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

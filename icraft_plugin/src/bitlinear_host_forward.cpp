@@ -4,8 +4,10 @@
  * 用 C++ 模拟 FPGA 的 ternary matmul 行为:
  *   output[b][m] = sum_k( activation[b][k] * ternary_weight[m][k] )
  *
- * 权重编码 (packed uint8, 4 weights per byte, little-endian):
- *   2'b00 = -1, 2'b01 = 0, 2'b10 = +1, 2'b11 = 0 (padding)
+ * 权重布局 (packed uint8, 4 weights per byte, little-endian):
+ *   存储 shape: [M/4, K], packing 在 out_features (M) 维度
+ *   w[m][k] 的寻址: byte_idx = (m/4)*K + k, bit_idx = m%4
+ *   编码: 2'b00 = -1, 2'b01 = 0, 2'b10 = +1, 2'b11 = 0 (padding)
  */
 #include "bitlinear_op.h"
 #include <icraft-backends/hostbackend/backend.h>
@@ -72,9 +74,10 @@ static auto bitlinear_forward = [](const BitLinear& op,
             int32_t acc = 0;
             for (int64_t k = 0; k < K; k++) {
                 int8_t a = act_ptr[b * K + k];
-                // 每个 uint8 包含 4 个 ternary 权重
-                int byte_idx = static_cast<int>((m * K + k) / 4);
-                int bit_idx  = static_cast<int>((m * K + k) % 4);
+                // 权重 shape: [M/4, K], packing 在 M 维度
+                // w[m][k] -> byte at row (m/4), col k
+                int byte_idx = static_cast<int>((m / 4) * K + k);
+                int bit_idx  = static_cast<int>(m % 4);
                 int w = unpack_ternary(w_ptr[byte_idx], bit_idx);
                 // Ternary multiply-accumulate
                 if (w == 1)       acc += a;

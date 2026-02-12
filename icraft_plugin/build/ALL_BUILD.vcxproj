@@ -182,6 +182,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{5912D2E0-733A-3867-9BB4-9B959BDAE797}</Project>
       <Name>test_bitlinear</Name>
     </ProjectReference>
+    <ProjectReference Include="D:\SYSU\JC\Code-space\TDPU\icraft_plugin\build\test_real_weights.vcxproj">
+      <Project>{294259D3-8ECC-3471-A254-5B89D3690B82}</Project>
+      <Name>test_real_weights</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

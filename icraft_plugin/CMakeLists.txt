@@ -56,3 +56,16 @@ target_include_directories(test_bitlinear PRIVATE include)
 target_link_libraries(test_bitlinear PRIVATE
     Icraft::HostBackend
 )
+
+# ============================================================
+# 测试程序: PS-PL硬件交互模拟 (真实权重验证)
+# ============================================================
+add_executable(test_real_weights
+    test/test_real_weights.cpp
+    src/bitlinear_op.cpp
+    src/bitlinear_host_forward.cpp
+)
+target_include_directories(test_real_weights PRIVATE include)
+target_link_libraries(test_real_weights PRIVATE
+    Icraft::HostBackend
+)

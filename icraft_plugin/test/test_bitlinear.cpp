@@ -30,23 +30,22 @@ using icraft::xrt::HostBackend;
 using icraft::xrt::HostDevice;
 
 // 生成测试权重: 全 +1 (packed uint8)
-// 编码: 2'b10 = +1, 每个 byte 存 4 个权重 = 0xAA
+// 权重布局: [M/4, K], packing 在 M 维度
+// 编码: 2'b10 = +1, 每个 byte 存 4 个 M 方向的权重 = 0xAA
 static std::vector<uint8_t> generate_all_pos_weights(int64_t M, int64_t K) {
-    int64_t packed_size = (M * K + 3) / 4;
+    int64_t packed_size = (M / 4) * K;
     return std::vector<uint8_t>(packed_size, 0xAA);  // 10101010 = 4x(+1)
 }
 
-// 生成混合权重: 前半 +1, 后半 -1
-// +1 = 2'b10 = 0xAA per byte, -1 = 2'b00 = 0x00 per byte
+// 生成混合权重: 前半 K 为 +1, 后半 K 为 -1
+// 权重布局: [M/4, K], packing 在 M 维度
 static std::vector<uint8_t> generate_mixed_weights(int64_t M, int64_t K) {
-    int64_t packed_size = (M * K + 3) / 4;
+    int64_t packed_size = (M / 4) * K;
     std::vector<uint8_t> w(packed_size, 0);
-    // 每行前 K/2 个权重为 +1, 后 K/2 个为 -1
     for (int64_t m = 0; m < M; m++) {
         for (int64_t k = 0; k < K; k++) {
-            int64_t flat = m * K + k;
-            int byte_idx = flat / 4;
-            int bit_idx  = flat % 4;
+            int byte_idx = (m / 4) * K + k;
+            int bit_idx  = m % 4;
             uint8_t val = (k < K / 2) ? 0x2 : 0x0;  // +1 or -1
             w[byte_idx] |= (val << (bit_idx * 2));
         }
@@ -54,7 +53,7 @@ static std::vector<uint8_t> generate_mixed_weights(int64_t M, int64_t K) {
     return w;
 }
 
-// C++ 参考实现: ternary matmul
+// C++ 参考实现: ternary matmul (权重布局 [M/4, K], packing 在 M 维度)
 static std::vector<int32_t> reference_ternary_matmul(
     const int8_t* act, const uint8_t* w_packed,
     int64_t batch, int64_t M, int64_t K)
@@ -65,8 +64,8 @@ static std::vector<int32_t> reference_ternary_matmul(
             int32_t acc = 0;
             for (int64_t k = 0; k < K; k++) {
                 int8_t a = act[b * K + k];
-                int byte_idx = (m * K + k) / 4;
-                int bit_idx  = (m * K + k) % 4;
+                int byte_idx = (m / 4) * K + k;
+                int bit_idx  = m % 4;
                 int val = (w_packed[byte_idx] >> (bit_idx * 2)) & 0x3;
                 int w = (val == 0) ? -1 : (val == 2) ? 1 : 0;
                 acc += a * w;
@@ -94,9 +93,9 @@ static bool run_test(const char* name,
     auto input_op = Input(Array<TensorType>{input_type});
     network.addOp(input_op);
 
-    // Weight: [M, K/4] packed uint8 (作为 Params)
+    // Weight: [M/4, K] packed uint8 (packing 在 M 维度, 作为 Params)
     auto weight_type = TensorType(IntegerType::UInt8(),
-        Array<int64_t>{M, K / 4}, Layout("RC"));
+        Array<int64_t>{M / 4, K}, Layout("RC"));
     auto weight_data = std::shared_ptr<uint8_t[]>(
         new uint8_t[weights.size()]);
     std::memcpy(weight_data.get(), weights.data(), weights.size());

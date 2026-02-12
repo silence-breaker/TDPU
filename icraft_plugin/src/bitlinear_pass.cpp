@@ -36,9 +36,10 @@ static Pass ReplaceMatMulWithBitLinear() {
             auto input = matmul->inputs[0];
             auto weight_ttype = weight.tensorType();
 
-            // weight shape: [out_features, in_features/4] (packed)
-            int64_t M = weight_ttype.getDim(0);
-            int64_t K = weight_ttype.getDim(1) * 4;  // 解包后的实际维度
+            // weight shape: [M/4, K] (packing 在 out_features 维度)
+            // safetensors 中 q_proj: [640, 2560] -> M=2560, K=2560
+            int64_t M = weight_ttype.getDim(0) * 4;  // 解包后的 out_features
+            int64_t K = weight_ttype.getDim(1);       // in_features 不变
 
             auto bitlinear = BitLinear(input, weight, K, M);
             net.replaceOpKeepUses(matmul, bitlinear);

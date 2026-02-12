@@ -10,11 +10,30 @@
 - [x] Phase 2 代码完成: icraft_plugin/ 全部文件已创建
 - [x] Phase 2 编译通过: icraft.tdpu.bitlinear.dll + test_bitlinear.exe 均编译成功
 - [x] Phase 2 验证通过: test_bitlinear.exe 2/2 PASS (All+1=640, Mixed=0)
-- [ ] Phase 3: ONNX 模型接入
+- [x] Phase 3 单层 ONNX 导出: single_layer_bitlinear.onnx (q_proj, 1.6KB)
+- [x] 权重 packing 方向修正: [M/4, K] (packing 在 M 维度), 全部代码已同步
+- [x] Phase 3.5 真实权重验证: PS-PL硬件交互模拟 ✓ PASS (2560/2560 outputs match)
+- [ ] Phase 3 端到端: icraft parse + optimize + run 验证
 
 **本次目标**: 升级 RTL 到 LEN=32，并完成 Icraft 自定义算子注册 + HostBackend CPU 仿真，使 `icraft run` 能在 PC 上跑通 BitLinear 计算图。
 
 ---
+
+## 当前进展与发现
+* icraft parse 命令行工具是为标准图像模型 → Buyi 硬件流程设计的，需要大量预处理参数（pre_method, pre_scale, channel_swap 等），不支持 Host target。对于自定义算子场景，正确的端到端路径是：
+
+1. PC 仿真验证（已完成）：通过 C++ XIR API 手动构建网络 + HostBackend 前向，test_bitlinear.exe 2/2 PASS
+2. 真实权重验证（已完成）：扩展 test 加载 safetensors 中的真实 q_proj 权重，test_real_weights.exe PASS
+3. 上板部署：在 FMQL30TAI 上注册 BuyiBackend 前向，通过 PL 加速模块执行
+
+* Phase 2 的核心目标——BitLinear 自定义算子注册 + HostBackend CPU 仿真——已经完全达成。Phase 3 的 ONNX 模型接入部分，单层 ONNX 已导出成功，但 icraft parse 命令行不适用于自定义算子。后续上板时需要通过 C++ API 直接构建网络或实现自定义 Parser 接口。
+
+* Phase 3.5 真实权重验证完成：
+  - 从 safetensors 成功提取 q_proj 权重 (640×2560 uint8, 1.6MB)
+  - 权重分布: -1(25.17%), 0(49.62%), +1(25.21%) - 符合 BitNet 特性
+  - PS-PL 硬件交互模拟: 生成随机激活值 → 构建 XIR 网络 → HostBackend 计算 → 验证结果
+  - 所有 2560 个输出与参考实现完全匹配 ✓
+
 
 ## 总体路线 (3 个 Phase)
 
@@ -354,6 +373,57 @@ icraft run --json ./output/model_optimized.json --raw ./output/model_optimized.r
 
 ---
 
+## Phase 3.5: 真实权重验证 (PS-PL硬件交互模拟)
+
+### Step 3.5.1 权重提取
+
+**文件**: `TDPU/models/extract_weights.py`（新建）
+
+从 safetensors 中提取 q_proj 权重并保存为二进制文件:
+
+```bash
+conda activate icraft_env
+python models/extract_weights.py
+```
+
+输出: `models/output/q_proj_weights.bin` (1.6MB)
+
+权重分布分析:
+- -1 (0b00): 25.17% (稀疏性特征)
+- 0 (0b01): 49.62% (高度稀疏)
+- +1 (0b10): 25.21% (对称分布)
+
+### Step 3.5.2 PS-PL硬件交互模拟
+
+**文件**: `TDPU/icraft_plugin/test/test_real_weights.cpp`（新建）
+
+完整的端到端验证流程:
+
+1. **PS端**: 加载真实权重 (q_proj, 2560×2560)
+2. **请求生成**: 创建随机激活值 [1, 2560] INT8
+3. **PL端计算**: 通过 XIR API + HostBackend 执行 BitLinear
+4. **结果验证**: 与 C++ 参考实现对比
+
+编译:
+```powershell
+cd icraft_plugin/build
+cmake --build . --config Release
+```
+
+运行:
+```powershell
+cd Release
+./test_real_weights.exe "..\..\models\output\q_proj_weights.bin"
+```
+
+**测试结果** ✓ PASS:
+- 权重加载: 1638400 bytes (640×2560 uint8)
+- 激活值生成: [1, 2560] INT8 随机值
+- BitLinear计算: 2560 个输出
+- 验证: 所有 2560 个输出与参考实现完全匹配
+
+---
+
 ## 关键文件清单
 
 | 操作 | 文件路径 | 说明 |
@@ -366,7 +436,9 @@ icraft run --json ./output/model_optimized.json --raw ./output/model_optimized.r
 | 新建 | `TDPU/icraft_plugin/src/bitlinear_host_forward.cpp` | HostBackend 前向 |
 | 新建 | `TDPU/icraft_plugin/src/bitlinear_pass.cpp` | 优化 Pass |
 | 新建 | `TDPU/icraft_plugin/test/test_bitlinear.cpp` | 测试程序 |
+| 新建 | `TDPU/icraft_plugin/test/test_real_weights.cpp` | PS-PL硬件交互模拟 (真实权重) |
 | 新建 | `TDPU/models/export_single_layer.py` | 单层 ONNX 导出 |
+| 新建 | `TDPU/models/extract_weights.py` | 从 safetensors 提取权重 |
 | 参考 | `Icraft文档/extensibility/customop.md` | 自定义算子文档 |
 | 参考 | `models/microsoftbitnet_b1.58_2B_4T/transfer_safetensors2onnx.py` | 已有导出脚本 |
 
@@ -408,3 +480,5 @@ icraft run --json ./output/model_optimized.json --raw ./output/model_optimized.r
 | test 链接 DLL | test 直接编译源文件 | DLL 无导出符号不生成 `.lib`，test 需直接编译 |
 | forward 3 参数 | forward 4 参数 (含 outputs) | `set_forward` 的 lambda 签名需要 4 个参数 |
 | forward 中 `inputs[1]` 取权重 | `op.paramsInputs()[0].data<uint8_t>().get()` | `inputs` 只含运行时张量，Params 权重需从 Operation 获取 |
+| 权重 packing 在 K 维度 `[M, K/4]` | 权重 packing 在 M 维度 `[M/4, K]` | safetensors 中 q_proj shape=[640,2560]，M=2560, K=2560 |
+| `byte_idx = (m*K+k)/4` | `byte_idx = (m/4)*K + k, bit_idx = m%4` | 寻址方式随 packing 方向改变 |
