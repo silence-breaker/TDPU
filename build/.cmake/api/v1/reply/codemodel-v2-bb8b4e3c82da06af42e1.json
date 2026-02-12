@@ -1,0 +1,588 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::CudaDefault::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__CudaDefault-Debug-5c8092eeeeca1c5286f4.json",
+					"name" : "Icraft::CudaDefault",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::HostBackend::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__HostBackend-Debug-2bce2a238cf4b72caa88.json",
+					"name" : "Icraft::HostBackend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::Utils::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__Utils-Debug-9ff6648ca1bf53aa8918.json",
+					"name" : "Icraft::Utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XIR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XIR-Debug-470be628cf8725ce30d3.json",
+					"name" : "Icraft::XIR",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XRT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XRT-Debug-55ff61d8861eb3a006f9.json",
+					"name" : "Icraft::XRT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft_xir_serialize_flatbuffers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft_xir_serialize_flatbuffers-Debug-83a098da1966f8294d56.json",
+					"name" : "icraft_xir_serialize_flatbuffers",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "icraft_bitlinear_plugin",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-c71fe38a44ee0a3ba3f9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-5f3164c5f537d17bb100.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft.tdpu.bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft.tdpu.bitlinear-Debug-483b880a5a53042aef81.json",
+					"name" : "icraft.tdpu.bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bitlinear-Debug-7c633ae728c43fb32447.json",
+					"name" : "test_bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_real_weights::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_real_weights-Debug-a4e4d94ecce4cfd2d979.json",
+					"name" : "test_real_weights",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::CudaDefault::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__CudaDefault-Release-5c8092eeeeca1c5286f4.json",
+					"name" : "Icraft::CudaDefault",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::HostBackend::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__HostBackend-Release-2bce2a238cf4b72caa88.json",
+					"name" : "Icraft::HostBackend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::Utils::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__Utils-Release-9ff6648ca1bf53aa8918.json",
+					"name" : "Icraft::Utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XIR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XIR-Release-470be628cf8725ce30d3.json",
+					"name" : "Icraft::XIR",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XRT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XRT-Release-55ff61d8861eb3a006f9.json",
+					"name" : "Icraft::XRT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft_xir_serialize_flatbuffers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft_xir_serialize_flatbuffers-Release-83a098da1966f8294d56.json",
+					"name" : "icraft_xir_serialize_flatbuffers",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "icraft_bitlinear_plugin",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-c71fe38a44ee0a3ba3f9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-5f3164c5f537d17bb100.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft.tdpu.bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft.tdpu.bitlinear-Release-4ece5d2abc18af04be1e.json",
+					"name" : "icraft.tdpu.bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bitlinear-Release-1390896e5e888148d3c1.json",
+					"name" : "test_bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_real_weights::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_real_weights-Release-1a29ac542b3372658de4.json",
+					"name" : "test_real_weights",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::CudaDefault::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__CudaDefault-MinSizeRel-5c8092eeeeca1c5286f4.json",
+					"name" : "Icraft::CudaDefault",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::HostBackend::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__HostBackend-MinSizeRel-2bce2a238cf4b72caa88.json",
+					"name" : "Icraft::HostBackend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::Utils::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__Utils-MinSizeRel-9ff6648ca1bf53aa8918.json",
+					"name" : "Icraft::Utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XIR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XIR-MinSizeRel-470be628cf8725ce30d3.json",
+					"name" : "Icraft::XIR",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XRT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XRT-MinSizeRel-55ff61d8861eb3a006f9.json",
+					"name" : "Icraft::XRT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft_xir_serialize_flatbuffers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft_xir_serialize_flatbuffers-MinSizeRel-83a098da1966f8294d56.json",
+					"name" : "icraft_xir_serialize_flatbuffers",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"build" : ".",
+					"jsonFile" : "directory-.-MinSizeRel-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "icraft_bitlinear_plugin",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-c71fe38a44ee0a3ba3f9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-5f3164c5f537d17bb100.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft.tdpu.bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft.tdpu.bitlinear-MinSizeRel-ff74a4e9b12ef8288aa9.json",
+					"name" : "icraft.tdpu.bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bitlinear-MinSizeRel-139a27e0ae4400243636.json",
+					"name" : "test_bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_real_weights::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_real_weights-MinSizeRel-a0d80a7f3e4be56ba1fb.json",
+					"name" : "test_real_weights",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::CudaDefault::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__CudaDefault-RelWithDebInfo-5c8092eeeeca1c5286f4.json",
+					"name" : "Icraft::CudaDefault",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::HostBackend::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__HostBackend-RelWithDebInfo-2bce2a238cf4b72caa88.json",
+					"name" : "Icraft::HostBackend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::Utils::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__Utils-RelWithDebInfo-9ff6648ca1bf53aa8918.json",
+					"name" : "Icraft::Utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XIR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XIR-RelWithDebInfo-470be628cf8725ce30d3.json",
+					"name" : "Icraft::XIR",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Icraft::XRT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Icraft__XRT-RelWithDebInfo-55ff61d8861eb3a006f9.json",
+					"name" : "Icraft::XRT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft_xir_serialize_flatbuffers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft_xir_serialize_flatbuffers-RelWithDebInfo-83a098da1966f8294d56.json",
+					"name" : "icraft_xir_serialize_flatbuffers",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "icraft_bitlinear_plugin",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-c71fe38a44ee0a3ba3f9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-5f3164c5f537d17bb100.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icraft.tdpu.bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icraft.tdpu.bitlinear-RelWithDebInfo-0f31e93aca5be98c575d.json",
+					"name" : "icraft.tdpu.bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bitlinear::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bitlinear-RelWithDebInfo-273bed316a5d4019b6fb.json",
+					"name" : "test_bitlinear",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_real_weights::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_real_weights-RelWithDebInfo-d184a2438ba607360d78.json",
+					"name" : "test_real_weights",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/SYSU/JC/Code-space/TDPU/build",
+		"source" : "D:/SYSU/JC/Code-space/TDPU/icraft_plugin"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}
